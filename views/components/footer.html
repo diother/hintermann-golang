@@ -1,0 +1,23 @@
+{{ define "footer" }} 
+<footer class="border-t md:text-lg">
+    <div class="mx-auto flex max-w-screen-md flex-col items-center gap-4 px-6 py-12 text-center">
+        <a href="/contact" class="underline underline-offset-2">Contact</a>
+        <a href="/legal/terms" class="underline underline-offset-2">Termeni și condiții</a>
+        <a href="/legal/privacy" class="underline underline-offset-2">Politică de confidențialitate</a>
+        <div class="mt-4 flex gap-6 text-secondary">
+            <a href="https://www.facebook.com/people/Hintermann-Charity/61556605667252/" class="flex w-fit text-2xl" aria-label="Facebook">
+                {{ template "icons/facebook" "class='h-7 w-7'" }}
+            </a>
+            <a href="https://www.instagram.com/hintermann_charity/" class="flex w-fit text-2xl" aria-label="Instagram">
+                {{ template "icons/instagram" "class='h-7 w-7'" }}
+            </a>
+            <a href="https://www.linkedin.com/company/101937853/" class="flex w-fit text-2xl" aria-label="LinkedIn">
+                {{ template "icons/linkedin" "class='h-7 w-7'" }}
+            </a>
+            <a href="https://twitter.com/hintermann_" class="flex w-fit text-2xl" aria-label="Twitter">
+                {{ template "icons/twitter" "class='h-7 w-7'" }}
+            </a>
+        </div>
+    </div>
+</footer>
+{{ end }}

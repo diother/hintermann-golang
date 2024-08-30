@@ -13,7 +13,6 @@ func main() {
 
     http.HandleFunc("/", handlers.HomeHandler)
     http.HandleFunc("/contact", handlers.ContactHandler)
-    http.HandleFunc("/count", handlers.CountHandler)
 
     err := http.ListenAndServe(":8080", nil)
     if err != nil {

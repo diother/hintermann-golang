@@ -6,60 +6,36 @@ import (
 	"net/http"
 )
 
-type PageData struct {
-    Title string
-    Content string
-    Count int
-}
-
 var counter int = 1
 
+func arr(els ...interface{}) []interface{} {
+	return els
+}
+
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
-    data := PageData{
-        Title:   "Welcome",
-        Content: "This is the home page.",
-        Count: counter,
-    }
+	tmpl := template.New("base").Funcs(template.FuncMap {
+		"arr": arr,
+	})
+	tmpl = template.Must(tmpl.ParseGlob("views/*.html"))
+	tmpl = template.Must(tmpl.ParseGlob("views/components/*.html"))
 
-    tmpl := template.Must(template.ParseFiles(
-        "views/home.tmpl", 
-        "views/head.tmpl", 
-        "views/foot.tmpl", 
-        "views/components/header.tmpl", 
-        "views/components/icons.tmpl",
-    ))
-
-    err := tmpl.ExecuteTemplate(w, "home", data)
-    if err != nil {
+	err := tmpl.ExecuteTemplate(w, "home", nil)
+	if err != nil {
         log.Fatal(err)
-        http.Error(w, "Internal Server Error", http.StatusInternalServerError)
-    }
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
 }
 
 func ContactHandler(w http.ResponseWriter, r *http.Request) {
-    tmpl := template.Must(template.ParseFiles("views/home.tmpl"))
+	tmpl := template.New("base").Funcs(template.FuncMap {
+		"arr": arr,
+	})
+	tmpl = template.Must(tmpl.ParseGlob("views/*.html"))
+	tmpl = template.Must(tmpl.ParseGlob("views/components/*.html"))
 
-    data := PageData{
-        Title:   "Welcome",
-        Content: "This is the about page.",
-        Count: counter,
-    }
-
-    err := tmpl.ExecuteTemplate(w, "home", data)
-    if err != nil {
-        http.Error(w, "Internal Server Error", http.StatusInternalServerError)
-    }
-}
-
-func CountHandler(w http.ResponseWriter, r *http.Request) {
-    if r.Method != http.MethodPost {
-        http.NotFound(w, r)
-        return
-    }
-    tmpl := template.Must(template.ParseFiles("views/components/header.tmpl"))
-
-    err := tmpl.ExecuteTemplate(w, "header", nil)
-    if err != nil {
-        http.Error(w, "Internal Server Error", http.StatusInternalServerError)
-    }
+	err := tmpl.ExecuteTemplate(w, "contact", nil)
+	if err != nil {
+        log.Fatal(err)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
 }

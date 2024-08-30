@@ -1,6 +1,6 @@
 export default {
     content: [
-        "./views/**/*.tmpl"
+        "./views/**/*.html"
     ],
     prefix: "",
     theme: {
