@@ -1,9 +1,9 @@
 package handlers
 
 import (
-	"text/template"
 	"log"
 	"net/http"
+	"text/template"
 )
 
 var counter int = 1
@@ -13,7 +13,7 @@ func arr(els ...interface{}) []interface{} {
 }
 
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
-	tmpl := template.New("base").Funcs(template.FuncMap {
+	tmpl := template.New("base").Funcs(template.FuncMap{
 		"arr": arr,
 	})
 	tmpl = template.Must(tmpl.ParseGlob("views/*.html"))
@@ -21,13 +21,13 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 
 	err := tmpl.ExecuteTemplate(w, "home", nil)
 	if err != nil {
-        log.Fatal(err)
+		log.Fatal(err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
 
 func ContactHandler(w http.ResponseWriter, r *http.Request) {
-	tmpl := template.New("base").Funcs(template.FuncMap {
+	tmpl := template.New("base").Funcs(template.FuncMap{
 		"arr": arr,
 	})
 	tmpl = template.Must(tmpl.ParseGlob("views/*.html"))
@@ -35,7 +35,21 @@ func ContactHandler(w http.ResponseWriter, r *http.Request) {
 
 	err := tmpl.ExecuteTemplate(w, "contact", nil)
 	if err != nil {
-        log.Fatal(err)
+		log.Fatal(err)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+}
+
+func ThankYouPage(w http.ResponseWriter, r *http.Request) {
+	tmpl := template.New("base").Funcs(template.FuncMap{
+		"arr": arr,
+	})
+	tmpl = template.Must(tmpl.ParseGlob("views/*.html"))
+	tmpl = template.Must(tmpl.ParseGlob("views/components/*.html"))
+
+	err := tmpl.ExecuteTemplate(w, "thank-you", nil)
+	if err != nil {
+		log.Fatal(err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }

@@ -7,15 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     openBtn.addEventListener("click", () => {
         scrollTop = window.scrollY;
-        wrapper.classList.add("fixed", "overflow-auto");
+        wrapper.classList.add("fixed", "overflow-hidden");
         openBtn.classList.add("hidden");
         closeBtn.classList.remove("hidden");
         mobileMenu.classList.remove("hidden");
-        wrapper.scrollTo(0, scrollTop);
     });
 
     closeBtn.addEventListener("click", () => {
-        wrapper.classList.remove("fixed", "overflow-auto");
+        wrapper.classList.remove("fixed", "overflow-hidden");
         openBtn.classList.remove("hidden");
         closeBtn.classList.add("hidden");
         mobileMenu.classList.add("hidden");
