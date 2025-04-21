@@ -1,8 +1,8 @@
-{{ define "thank-you" }}
-{{ template "head" }}
-{{ template "header" }}
+{{- define "thank-you" -}}
+{{- template "head" -}}
+{{- template "header" -}}
 <main class="mx-auto flex w-full max-w-screen-md flex-col justify-center gap-6 px-6 py-12 md:py-16 md:text-lg">
-    {{ template "icons/check" "class='h-11 w-11 text-secondary'" }}
+    {{- template "icons/check" "class='h-11 w-11 text-secondary'" -}}
     <h1 class="font-display text-2xl md:text-3xl">
         Mulțumim! <span class="italic">Serios.</span>
     </h1>
@@ -15,20 +15,20 @@
     <p>Stai la curent cu ultimele noutăți:</p>
     <div class="flex items-center gap-5">
             <a href="https://www.facebook.com/people/Hintermann-Charity/61556605667252/" class="flex w-fit text-2xl text-secondary transition hover:text-primary" aria-label="Facebook">
-                {{ template "icons/facebook" "class='h-7 w-7'" }}
+                {{- template "icons/facebook" "class='h-7 w-7'" -}}
             </a>
             <a href="https://www.instagram.com/hintermann_charity/" class="flex w-fit text-2xl text-secondary transition hover:text-primary" aria-label="Instagram">
-                {{ template "icons/instagram" "class='h-7 w-7'" }}
+                {{- template "icons/instagram" "class='h-7 w-7'" -}}
             </a>
             <a href="https://www.linkedin.com/company/101937853/" class="flex w-fit text-2xl text-secondary transition hover:text-primary" aria-label="LinkedIn">
-                {{ template "icons/linkedin" "class='h-7 w-7'" }}
+                {{- template "icons/linkedin" "class='h-7 w-7'" -}}
             </a>
             <a href="https://twitter.com/hintermann_" class="flex w-fit text-2xl text-secondary transition hover:text-primary" aria-label="Twitter">
-                {{ template "icons/twitter" "class='h-7 w-7'" }}
+                {{- template "icons/twitter" "class='h-7 w-7'" -}}
             </a>
     </div>
-    {{ template "button" (arr "Acasă" "justify-start" "/" "lg" "") }}
+    {{- template "button" (arr "Acasă" "justify-start" "/" "lg" "") -}}
 </main>
-{{ template "footer" }}
-{{ template "foot" }}
-{{ end }} 
+{{- template "footer" -}}
+{{- template "foot" -}}
+{{- end -}} 
