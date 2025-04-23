@@ -1,36 +1,36 @@
-{{ define "header" }} 
+{{- define "header" -}} 
 <header class="sticky top-0 z-50 w-full border-b before:absolute before:inset-0 before:-z-10 before:backdrop-blur supports-[backdrop-filter]:bg-background/80">
     <div class="mx-auto flex min-h-16 max-w-screen-md flex-col justify-between gap-4 px-4 py-4 xs:flex-row xs:items-center xs:px-6">
-        <a href="/" aria-label="Logo">{{ template "icons/logo" "class='h-[24px] w-[232px]'" }}</a>
+        <a href="/" aria-label="Logo">{{-  template "icons/logo" "class='h-[24px] w-[232px]'" -}}</a>
         <div class="flex gap-4">
             <div class="hidden items-center gap-6 md:flex">
                 <a href="/contact" class="text-muted transition-colors hover:text-foreground">Contact</a>
                 <a href="/projects" class="text-muted transition-colors hover:text-foreground">Proiecte</a>
             </div>
-            {{ template "button" (arr "Donează" "hidden md:flex" "/donate" "" "") }}
-            {{ template "mobile-menu" }}
+            {{- template "button" (slice "Donează" "hidden md:flex" "/donate" "" "" "") -}}
+            {{- template "mobile-menu" -}}
         </div>
     </div>
 </header>
-{{ end }}
+{{- end -}}
 
-{{ define "mobile-menu" }}
+{{- define "mobile-menu" -}}
 <div id="open" aria-label="Open mobile-menu" class="md:hidden">
-    {{ template "icons/menu" "class='h-8 w-8'" }}
+    {{-  template "icons/menu" "class='h-8 w-8'" -}}
 </div>
 <div id="mobile-menu" class="hidden flex overflow-auto fixed inset-0 z-50 flex-col bg-background">
     <div class="w-full flex min-h-16 border-b flex-col justify-between gap-4 px-4 py-4 xs:flex-row xs:items-center xs:px-6">
         <a href="/" aria-label="Logo">
-            {{ template "icons/logo" "class='h-[24px] w-[232px]'" }}
+            {{-  template "icons/logo" "class='h-[24px] w-[232px]'" -}}
         </a>
         <div id="close" class="hidden" aria-label="Close mobile-menu">
-            {{ template "icons/close" "class='h-8 w-8'" }}
+            {{-  template "icons/close" "class='h-8 w-8'" -}}
         </div>
     </div>
     <div class="mt-8 flex flex-col gap-5 px-4 xs:px-6">
         <a href="/projects" class="font-display text-2xl">Proiecte</a>
         <a href="/contact" class="font-display text-2xl">Contact</a>
-        {{ template "button" (arr "Donează" "mt-3" "/donate" "xl" "") }}
+        {{-  template "button" (slice "Donează" "mt-3" "/donate" "xl" "" "") -}}
     </div>
 </div>
-{{ end }}
+{{- end -}}

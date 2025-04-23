@@ -4,52 +4,43 @@ import (
 	"log"
 	"net/http"
 	"text/template"
+
+	"github.com/diother/hintermann-golang/internal/helpers"
 )
 
-var counter int = 1
-
-func arr(els ...interface{}) []interface{} {
-	return els
+type Handler struct {
+	tmpl *template.Template
 }
 
-func HomeHandler(w http.ResponseWriter, r *http.Request) {
+func NewHandler() *Handler {
 	tmpl := template.New("base").Funcs(template.FuncMap{
-		"arr": arr,
+		"slice": helpers.SliceHelper,
+		"attr":  helpers.AttrHelper,
 	})
-	tmpl = template.Must(tmpl.ParseGlob("views/*.html"))
-	tmpl = template.Must(tmpl.ParseGlob("views/components/*.html"))
+	tmpl = template.Must(tmpl.ParseGlob("internal/views/*.html"))
+	tmpl = template.Must(tmpl.ParseGlob("internal/views/components/*.html"))
 
-	err := tmpl.ExecuteTemplate(w, "home", nil)
+	return &Handler{tmpl}
+}
+
+func (h *Handler) HandleHome(w http.ResponseWriter, r *http.Request) {
+	err := h.tmpl.ExecuteTemplate(w, "home", nil)
 	if err != nil {
 		log.Fatal(err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
 
-func ContactHandler(w http.ResponseWriter, r *http.Request) {
-	tmpl := template.New("base").Funcs(template.FuncMap{
-		"arr": arr,
-	})
-	tmpl = template.Must(tmpl.ParseGlob("views/*.html"))
-	tmpl = template.Must(tmpl.ParseGlob("views/components/*.html"))
-
-	err := tmpl.ExecuteTemplate(w, "contact", nil)
-	if err != nil {
-		log.Fatal(err)
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-	}
-}
-
-func ThankYouPage(w http.ResponseWriter, r *http.Request) {
-	tmpl := template.New("base").Funcs(template.FuncMap{
-		"arr": arr,
-	})
-	tmpl = template.Must(tmpl.ParseGlob("views/*.html"))
-	tmpl = template.Must(tmpl.ParseGlob("views/components/*.html"))
-
-	err := tmpl.ExecuteTemplate(w, "thank-you", nil)
-	if err != nil {
-		log.Fatal(err)
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-	}
-}
+// func ContactHandler(w http.ResponseWriter, r *http.Request) {
+// 	tmpl := template.New("base").Funcs(template.FuncMap{
+// 		"arr": arr,
+// 	})
+// 	tmpl = template.Must(tmpl.ParseGlob("internal/views/*.html"))
+// 	tmpl = template.Must(tmpl.ParseGlob("internal/views/components/*.html"))
+//
+// 	err := tmpl.ExecuteTemplate(w, "contact", nil)
+// 	if err != nil {
+// 		log.Fatal(err)
+// 		http.Error(w, err.Error(), http.StatusInternalServerError)
+// 	}
+// }

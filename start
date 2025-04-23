@@ -1,9 +1,0 @@
-#!/bin/bash
-
-session=$(tmux display-message -p '#S')
-window=$(tmux display-message -p '#I')
-
-tmux split-window -v
-
-tmux send-keys -t "$session:$window.0" 'air' C-m
-tmux send-keys -t "$session:$window.1" 'tailwindcss -i ./static/css/tailwind.css -o ./static/css/output.css --watch' C-m
