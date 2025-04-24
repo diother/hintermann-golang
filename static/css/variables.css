@@ -1,0 +1,45 @@
+:root {
+  /* Fonts */
+  --font-body: "Roboto", Arial, system-ui, sans-serif;
+  --font-heading: "Raleway", Arial, system-ui, sans-serif;
+
+  /* Font sizes */
+  --font-size-base: 1rem;
+
+  /* Colors */
+  --color-bg: 0 0% 100%;
+  --color-fg: 0 0% 0%;
+  --color-primary: 328 80% 47%;
+  --color-secondary: 220 31% 33%;
+  --color-muted: 0 0% 42%;
+  --color-border: 220, 13%, 91%;
+
+  /* Borders */
+  --border-default: 1px solid hsl(var(--color-border));
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+
+  /* Breakpoints */
+  --size-xs: 320px;
+  --size-sm: 480px;
+  --size-md: 768px;
+  --size-lg: 1024px;
+  --size-xl: 1280px;
+  --size-2xl: 1440px;
+
+  /* Transitions */
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 150ms var(--ease-default);
+  --transition-base: 250ms var(--ease-default);
+  --transition-slow: 400ms var(--ease-default);
+}

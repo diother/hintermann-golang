@@ -24,23 +24,8 @@ func NewHandler() *Handler {
 }
 
 func (h *Handler) HandleHome(w http.ResponseWriter, r *http.Request) {
-	err := h.tmpl.ExecuteTemplate(w, "home", nil)
-	if err != nil {
+	if err := h.tmpl.ExecuteTemplate(w, "home", nil); err != nil {
 		log.Fatal(err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
-
-// func ContactHandler(w http.ResponseWriter, r *http.Request) {
-// 	tmpl := template.New("base").Funcs(template.FuncMap{
-// 		"arr": arr,
-// 	})
-// 	tmpl = template.Must(tmpl.ParseGlob("internal/views/*.html"))
-// 	tmpl = template.Must(tmpl.ParseGlob("internal/views/components/*.html"))
-//
-// 	err := tmpl.ExecuteTemplate(w, "contact", nil)
-// 	if err != nil {
-// 		log.Fatal(err)
-// 		http.Error(w, err.Error(), http.StatusInternalServerError)
-// 	}
-// }

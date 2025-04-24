@@ -1,0 +1,28 @@
+.button {
+  color: #fff;
+  background-color: hsl(var(--color-primary));
+  transition: var(--transition-fast);
+}
+
+.button:hover {
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* {{ $base := "block w-fit rounded-full border text-center font-display transition-colors" }} */
+/**/
+/* {{ $variantStyles := "" }} */
+/* {{ $sizeStyles := "" }} */
+/**/
+/* {{ if eq $size "xl" }} */
+/*     {{ $sizeStyles = "px-6 py-2 text-xl" }} */
+/* {{ else if eq $size "lg" }} */
+/*     {{ $sizeStyles = "px-5 py-1.5 text-lg" }} */
+/* {{ else }} */
+/*     {{ $sizeStyles = "px-4 py-1 text-base" }} */
+/* {{ end }} */
+/**/
+/* {{ if eq $variant "secondary" }} */
+/*     {{ $variantStyles = "border-primary bg-white text-primary hover:bg-white/80" }} */
+/* {{ else }} */
+/*     {{ $variantStyles = "border-primary bg-primary text-white hover:bg-primary/80" }} */
+/* {{ end }} */
