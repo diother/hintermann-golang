@@ -1,16 +1,15 @@
 {{- define "header" -}}
-<header class="site-header">
-    <div class="site-header__inner">
-        <a href="/" class="site-header__logo" aria-label="Logo">
-            {{- template "icons/logo" "class='site-header__logo-icon'" -}}
+<header class="header">
+    <div class="header__inner container flex align-center justify-between gap-4">
+        <a href="/" aria-label="Logo">
+            {{- template "icons/logo" (slice "232px" "24px") -}}
         </a>
-        <div class="site-header__nav-group">
-            <nav class="site-header__nav">
-                <a href="/contact" class="site-header__link">Contact</a>
-                <a href="/projects" class="site-header__link">Proiecte</a>
+        <div class="flex align-center gap-4">
+            <nav class="hidden md:flex md:gap-6">
+                <a href="/contact" class="header__link">Contact</a>
+                <a href="/projects" class="header__link">Proiecte</a>
             </nav>
             {{- template "button" (slice "Donează" "/donate" nil nil nil nil) -}}
-            {{- template "mobile-menu" -}}
         </div>
     </div>
 </header>
@@ -18,16 +17,16 @@
 
 {{- define "mobile-menu" -}}
 <div id="open" aria-label="Open mobile-menu" class="md:hidden">
-    {{- template "icons/menu" "class='h-8 w-8 hidden'" -}}
+    {{- template "icons/menu" (slice "2rem" "2rem") -}}
 </div>
 <div id="mobile-menu" class="hidden flex overflow-auto fixed inset-0 z-50 flex-col bg-background">
     <div
         class="w-full flex min-h-16 border-b flex-col justify-between gap-4 px-4 py-4 xs:flex-row xs:items-center xs:px-6">
         <a href="/" aria-label="Logo">
-            {{- template "icons/logo" "class='h-[24px] w-[232px]'" -}}
+            {{- template "icons/logo" (slice "232px" "24px") -}}
         </a>
         <div id="close" class="hidden" aria-label="Close mobile-menu">
-            {{- template "icons/close" "class='h-8 w-8'" -}}
+            {{- template "icons/close" (slice "2rem" "2rem") -}}
         </div>
     </div>
     <div class="mt-8 flex flex-col gap-5 px-4 xs:px-6">

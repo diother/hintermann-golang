@@ -1,0 +1,69 @@
+/* Layout */
+.container {
+  max-width: var(--size-md);
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-6);
+}
+
+/* Flex utils */
+.hidden {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-2 {
+  gap: var(--space-2);
+}
+
+.gap-4 {
+  gap: var(--space-4);
+}
+
+.gap-6 {
+  gap: var(--space-6);
+}
+
+.gap-8 {
+  gap: var(--space-8);
+}
+
+.gap-12 {
+  gap: var(--space-12);
+}
+
+.gap-16 {
+  gap: var(--space-16);
+}
+
+.gap-20 {
+  gap: var(--space-20);
+}
+
+@media (min-width: 768px) {
+  .md\:flex {
+    display: flex;
+  }
+
+  .md\:gap-6 {
+    gap: var(--space-6);
+  }
+}

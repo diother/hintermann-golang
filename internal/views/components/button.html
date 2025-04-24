@@ -2,22 +2,36 @@
 
 {{- $children := index . 0 -}}
 {{- $href := index . 1 -}}
-{{- $class := index . 2 -}}
-{{- $variant := index . 3 -}}
-{{- $size := index . 4 -}}
+{{- $variant := index . 2 -}}
+{{- $size := index . 3 -}}
+{{- $class := index . 4 -}}
 {{- $attributes := index . 5 -}}
 
+{{- if not $variant -}}
+    {{- $variant = "primary" -}}
+{{- end -}}
+
+{{- if not $size -}}
+    {{- $size = "base" -}}
+{{- end -}}
+
+{{- if $class -}}
+    {{- $class = printf " %s" $class -}}
+{{- else -}}
+    {{- $class = "" -}}
+{{- end -}}
+
 {{- if $href -}}
-    <a href="{{- $href -}}" class="button button--{{ $variant }} button--{{ $size }} {{ $class -}}"
-        {{- if ne $attributes nil -}}
+    <a href="{{- $href -}}" class="button button--variant-{{ $variant }} button--size-{{ $size }}{{ $class -}}"
+        {{- if $attributes -}}
             {{- $attributes -}}
-        {{ end -}}
+        {{- end -}}
     >
         {{- $children -}}
     </a>
 {{- else -}}
-    <button class="button button--{{ $variant }} button--{{ $size }} {{ $class -}}"
-        {{- if ne $attributes nil -}} 
+    <button type="button" class="button button--variant-{{ $variant }} button--size-{{ $size }}{{ $class -}}"
+        {{- if $attributes -}} 
             {{- $attributes -}}
         {{- end -}}
     >

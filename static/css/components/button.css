@@ -1,28 +1,48 @@
 .button {
-  color: #fff;
-  background-color: hsl(var(--color-primary));
-  transition: var(--transition-fast);
+  display: block;
+  width: fit-content;
+  font-family: var(--font-heading);
+  font-size: var(--button-font-size);
+  color: hsl(var(--button-color-fg));
+  background-color: hsl(var(--button-color-bg));
+  padding: var(--button-padding-y) var(--button-padding-x);
+  border: 1px solid hsl(var(--button-color-bg));
+  border-radius: var(--radius-full);
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
 }
 
 .button:hover {
-  transform: translateY(-1px) scale(1.01);
+  background-color: hsl(var(--button-color-bg) / .8);
 }
 
-/* {{ $base := "block w-fit rounded-full border text-center font-display transition-colors" }} */
-/**/
-/* {{ $variantStyles := "" }} */
-/* {{ $sizeStyles := "" }} */
-/**/
-/* {{ if eq $size "xl" }} */
-/*     {{ $sizeStyles = "px-6 py-2 text-xl" }} */
-/* {{ else if eq $size "lg" }} */
-/*     {{ $sizeStyles = "px-5 py-1.5 text-lg" }} */
-/* {{ else }} */
-/*     {{ $sizeStyles = "px-4 py-1 text-base" }} */
-/* {{ end }} */
-/**/
-/* {{ if eq $variant "secondary" }} */
-/*     {{ $variantStyles = "border-primary bg-white text-primary hover:bg-white/80" }} */
-/* {{ else }} */
-/*     {{ $variantStyles = "border-primary bg-primary text-white hover:bg-primary/80" }} */
-/* {{ end }} */
+.button--variant-primary {
+  --button-color-bg: var(--color-primary);
+  --button-color-fg: var(--color-fg-inverse);
+}
+
+.button--variant-secondary {
+  --button-color-bg: var(--color-secondary);
+  --button-color-fg: var(--color-fg-inverse);
+}
+
+.button--size-base {
+  --button-font-size: var(--font-size-base);
+  --button-padding-y: var(--space-1);
+  --button-padding-x: var(--space-4);
+}
+
+.button--size-lg {
+  --button-font-size: var(--font-size-lg);
+  --button-padding-y: var(--space-1-5);
+  --button-padding-x: var(--space-6);
+}
+
+.button--size-xl {
+  --button-font-size: var(--font-size-lg);
+  --button-padding-y: var(--space-2);
+  --button-padding-x: var(--space-8);
+}

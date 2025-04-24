@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const wrapper = document.querySelector("#content-wrapper");
+    const wrapper = document.querySelector("#content");
     const openBtn = document.querySelector("#open");
     const closeBtn = document.querySelector("#close");
     const mobileMenu = document.querySelector("#mobile-menu");
