@@ -1,6 +1,7 @@
 {{- define "header" -}}
 <header class="header">
-    <div class="header__inner container flex align-center justify-between gap-4">
+    <div class="header__backdrop"></div>
+    <div class="header__container container flex align-center justify-between gap-4">
         <a href="/" aria-label="Logo">
             {{- template "icons/logo" (slice "232px" "24px") -}}
         </a>
@@ -9,30 +10,30 @@
                 <a href="/contact" class="header__link">Contact</a>
                 <a href="/projects" class="header__link">Proiecte</a>
             </nav>
-            {{- template "button" (slice "Donează" "/donate" nil nil nil nil) -}}
+            {{- template "button" (slice "Donează" "/donate" nil nil "hidden md:block" nil) -}}
+            {{- template "mobile-menu" }}
         </div>
     </div>
 </header>
 {{- end -}}
 
 {{- define "mobile-menu" -}}
-<div id="open" aria-label="Open mobile-menu" class="md:hidden">
+<div class="mobile-menu__open md:hidden" aria-label="Open mobile menu">
     {{- template "icons/menu" (slice "2rem" "2rem") -}}
 </div>
-<div id="mobile-menu" class="hidden flex overflow-auto fixed inset-0 z-50 flex-col bg-background">
-    <div
-        class="w-full flex min-h-16 border-b flex-col justify-between gap-4 px-4 py-4 xs:flex-row xs:items-center xs:px-6">
+<div class="mobile-menu hidden">
+    <div class="mobile-menu__header container flex align-center justify-between gap-4">
         <a href="/" aria-label="Logo">
             {{- template "icons/logo" (slice "232px" "24px") -}}
         </a>
-        <div id="close" class="hidden" aria-label="Close mobile-menu">
+        <div class="mobile-menu__close" aria-label="Close mobile menu">
             {{- template "icons/close" (slice "2rem" "2rem") -}}
         </div>
     </div>
-    <div class="mt-8 flex flex-col gap-5 px-4 xs:px-6">
-        <a href="/projects" class="font-display text-2xl">Proiecte</a>
-        <a href="/contact" class="font-display text-2xl">Contact</a>
-        <!-- {{- template "button" (slice "Donează" "mt-3" "/donate" "xl" "" "") -}} -->
-    </div>
+    <nav class="container flex flex-col gap-4">
+        <a href="/projects" class="mobile-menu__link">Proiecte</a>
+        <a href="/contact" class="mobile-menu__link">Contact</a>
+        {{- template "button" (slice "Donează" "/donate" nil "xl" "" "") -}}
+    </nav>
 </div>
 {{- end -}}

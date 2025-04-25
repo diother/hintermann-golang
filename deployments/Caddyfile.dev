@@ -1,7 +1,7 @@
-http://localhost:3000 {
+http://localhost:3000, http://hintermann.go.ro:3000 {
 	handle_path /static/* {
 		root * ./static
 		file_server
 	}
-	reverse_proxy localhost:8080
+	reverse_proxy http://localhost:8080
 }

@@ -2,20 +2,26 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  width: 100%;
-  backdrop-filter: blur(8px);
-  background-color: hsl(var(--color-bg) / .8);
-  border-bottom: var(--border-default);
 }
 
-@supports not (backdrop-filter: blur(8px)) {
-  .header {
+.header__backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: hsl(var(--color-bg) / .8);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+@supports not ((backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px))) {
+  .header__backdrop {
     background-color: hsl(var(--color-bg));
   }
 }
 
-.header__inner {
+.header__container {
   height: var(--space-16);
+  border-bottom: var(--border-default);
 }
 
 .header__link {
