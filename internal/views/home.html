@@ -1,23 +1,14 @@
 {{- define "home" -}}
 {{- template "head" -}}
 {{- template "header" -}}
-<main class="flex w-full flex-col gap-12 md:gap-20 md:text-lg">
-    <section class="relative mx-auto aspect-square w-full max-w-screen-xl md:aspect-video">
-        <video
-            width="1280"
-            height="720"
-            autoPlay
-            muted
-            loop
-            preload="none"
-            playsInline
-            class="absolute left-0 top-0 h-full w-full object-cover"
-        >
+<main class="flex flex-col gap-6">
+    <section class="hero container container--p-0 container--xl">
+        <video class="hero__video" width="1280" height="720" autoplay muted loop preload="none" playsInline>
             <source src="/static/media/hero-video.mp4" type="video/mp4" />
         </video>
     </section>
-    <section class="mx-auto flex max-w-screen-md flex-col gap-6 px-6">
-        <h1 class="font-display text-3xl md:text-4xl">Cine suntem?</h1>
+    <section class="container flex flex-col gap-6">
+        <h1>Cine suntem?</h1>
         <p>
             Suntem o organizație non-profit care vrea să arate că poți face
             bine din bucurie și conexiuni reale, nu doar din milă sau
@@ -29,35 +20,33 @@
             crea o comunitate activă și fun în jurul acestor inițiative.
         </p>
     </section>
-    <section class="relative mx-auto flex w-full max-w-screen-md flex-col gap-10 bg-secondary/15 px-6 py-12 md:gap-20 md:py-20">
-    </section>
-    <section class="mx-auto flex w-full max-w-screen-md flex-col gap-6 px-6">
-        <h1 class="font-display text-3xl md:text-4xl">Parteneri</h1>
+    <section class="partners container flex flex-col gap-6">
+        <h1>Parteneri</h1>
         <p>
             Mulțumim partenerilor noștri pentru sprijinul lor în răspândirea
             bunătății.
         </p>
         <div class="grid grid-cols-2">
-            <a href="https://www.auchan.ro/" class="flex h-24 items-center justify-center">
-                <img class="md:scale-110" src="/static/media/logos/auchan.png" width="115" height="27.85" alt="Logo auchan" />
+            <a class="partners__link flex align-center justify-center" href="https://www.auchan.ro/">
+                <img class="partners__logo" src="/static/media/logos/auchan.png" width="115" height="27.85" alt="Logo auchan" />
             </a>
-            <a href="https://humana-romania.ro/" class="flex h-24 items-center justify-center">
-                <img class="md:scale-110" src="/static/media/logos/humana.png" width="110" height="29.65" alt="Logo humana" />
+            <a class="partners__link flex align-center justify-center" href="https://humana-romania.ro/">
+                <img class="partners__logo" src="/static/media/logos/humana.png" width="110" height="29.65" alt="Logo humana" />
             </a>
-            <a href="https://alexstar.ro/" class="flex h-24 items-center justify-center">
-                <img class="md:scale-110" src="/static/media/logos/alex-star.png" width="90" height="37.97" alt="Logo alex-star" />
+            <a class="partners__link flex align-center justify-center" href="https://alexstar.ro/">
+                <img class="partners__logo" src="/static/media/logos/alex-star.png" width="90" height="37.97" alt="Logo alex-star" />
             </a>
-            <a href="https://www.listafirme.ro/" class="flex h-24 items-center justify-center">
-                <img class="md:scale-110" src="/static/media/logos/lista-firme.png" width="135" height="17.93" alt="Logo lista-firme" />
+            <a class="partners__link flex align-center justify-center" href="https://www.listafirme.ro/">
+                <img class="partners__logo" src="/static/media/logos/lista-firme.png" width="135" height="17.93" alt="Logo lista-firme" />
             </a>
-            <a href="https://www.carmeuse.com/ro-ro" class="flex h-24 items-center justify-center -mt-[10px]">
-                <img class="md:scale-110" src="/static/media/logos/carmeuse.png" width="100" height="50.39" alt="Logo carmeuse" />
+            <a class="partners__link flex align-center justify-center" href="https://www.carmeuse.com/ro-ro">
+                <img class="partners__logo" src="/static/media/logos/carmeuse.png" width="100" height="50.39" alt="Logo carmeuse" />
             </a>
-            <a href="https://panfood.ro/" class="flex h-24 items-center justify-center">
-                <img class="md:scale-110" src="/static/media/logos/panfood.png" width="78" height="64.29" alt="Logo panfood" />
+            <a class="partners__link flex align-center justify-center" href="https://panfood.ro/">
+                <img class="partners__logo" src="/static/media/logos/panfood.png" width="78" height="64.29" alt="Logo panfood" />
             </a>
-            <a href="https://plaicashcarry.ro/" class="flex h-24 items-center justify-center -mt-[7px]">
-                <img class="md:scale-110" src="/static/media/logos/plai.png" width="60" height="57.65" alt="Logo plai" />
+            <a class="partners__link flex align-center justify-center" href="https://plaicashcarry.ro/">
+                <img class="partners__logo" src="/static/media/logos/plai.png" width="60" height="57.65" alt="Logo plai" />
             </a>
         </div>
     </section>
