@@ -1,0 +1,30 @@
+.footer {
+  border-top: var(--border-default);
+}
+
+.footer__nav-container {
+  text-align: center;
+}
+
+.footer__link {
+  width: fit-content;
+  text-decoration-line: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition-fast);
+}
+
+.footer__link:hover {
+  color: hsl(var(--color-muted));
+}
+
+.footer__nav {
+  margin-top: var(--space-4);
+}
+
+.footer__social {
+  transition: color var(--transition-fast);
+}
+
+.footer__social:hover {
+  color: hsl(var(--color-muted));
+}

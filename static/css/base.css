@@ -33,6 +33,17 @@ body {
   line-height: 1.6;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content__main {
+  width: 100%;
+  flex: 1;
+}
+
 h1,
 h2,
 h3,

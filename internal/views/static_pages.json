@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "home",
+    "path": "/"
+  },
+  {
+    "slug": "contact",
+    "path": "/contact"
+  },
+  {
+    "slug": "thank-you",
+    "path": "/donate/thank-you"
+  }
+]

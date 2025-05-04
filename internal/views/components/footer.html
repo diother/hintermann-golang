@@ -1,23 +1,23 @@
 {{- define "footer" -}} 
-<footer class="border-t md:text-lg">
-    <div class="mx-auto flex max-w-screen-md flex-col items-center gap-4 px-6 py-12 text-center">
-        <a href="/contact" class="underline underline-offset-2">Contact</a>
-        <a href="/legal/terms" class="underline underline-offset-2">Termeni și condiții</a>
-        <a href="/legal/privacy" class="underline underline-offset-2">Politică de confidențialitate</a>
-        <div class="mt-4 flex gap-6 text-secondary">
-            <a href="https://www.facebook.com/people/Hintermann-Charity/61556605667252/" class="flex w-fit text-2xl" aria-label="Facebook">
+<footer class="footer">
+    <nav class="footer__nav-container container flex flex-col align-center gap-4">
+        <a class="footer__link" href="/contact">Contact</a>
+        <a class="footer__link" href="/legal/terms">Termeni și condiții</a>
+        <a class="footer__link" href="/legal/privacy">Politică de confidențialitate</a>
+        <nav class="footer__nav flex justify-center gap-6">
+            <a class="footer__social" aria-label="Facebook" href="https://www.facebook.com/people/Hintermann-Charity/61556605667252/">
                 {{- template "icons/facebook" (slice "1.75rem" "1.75rem") -}}
             </a>
-            <a href="https://www.instagram.com/hintermann_charity/" class="flex w-fit text-2xl" aria-label="Instagram">
+            <a class="footer__social" aria-label="Instagram" href="https://www.instagram.com/hintermann_charity/">
                 {{- template "icons/instagram" (slice "1.75rem" "1.75rem") -}}
             </a>
-            <a href="https://www.linkedin.com/company/101937853/" class="flex w-fit text-2xl" aria-label="LinkedIn">
+            <a class="footer__social" aria-label="LinkedIn" href="https://www.linkedin.com/company/101937853/">
                 {{- template "icons/linkedin" (slice "1.75rem" "1.75rem") -}}
             </a>
-            <a href="https://twitter.com/hintermann_" class="flex w-fit text-2xl" aria-label="Twitter">
+            <a class="footer__social" aria-label="Twitter" href="https://twitter.com/hintermann_">
                 {{- template "icons/twitter" (slice "1.75rem" "1.75rem") -}}
             </a>
-        </div>
-    </div>
+        </nav>
+    </nav>
 </footer>
 {{- end -}}

@@ -2,18 +2,30 @@ package main
 
 import (
 	"log"
-	"net/http"
 
-	"github.com/diother/hintermann-golang/internal/handlers"
+	"github.com/diother/hintermann-golang/internal/builder"
+	"github.com/diother/hintermann-golang/internal/fs"
 )
 
 func main() {
-	handler := handlers.NewHandler()
-
-	http.HandleFunc("/", handler.HandleHome)
-	// http.HandleFunc("/contact", handlers.ContactHandler)
-
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	if err := fs.CleanDist(); err != nil {
+		log.Fatal(err)
+	}
+	tmpl, err := builder.LoadTemplates()
+	if err != nil {
+		log.Fatal(err)
+	}
+	projectMetaList, err := builder.LoadProjectMetaList()
+	if err != nil {
+		log.Fatal(err)
+	}
+	if err := builder.RenderProjects(projectMetaList, tmpl); err != nil {
+		log.Fatal(err)
+	}
+	if err := builder.RenderStaticPages(projectMetaList, tmpl); err != nil {
+		log.Fatal(err)
+	}
+	if err := builder.CopyGlobalAssets(); err != nil {
 		log.Fatal(err)
 	}
 }

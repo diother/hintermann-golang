@@ -1,4 +1,4 @@
-{{- define "header" -}}
+{{ define "header" }}
 <header class="header">
     <div class="header__backdrop"></div>
     <div class="header__container container flex align-center justify-between gap-4">
@@ -10,30 +10,38 @@
                 <a href="/contact" class="header__link">Contact</a>
                 <a href="/projects" class="header__link">Proiecte</a>
             </nav>
-            {{- template "button" (slice "Donează" "/donate" nil nil "hidden md:block" nil) -}}
-            {{- template "mobile-menu" }}
+            {{ template "button" props
+                "Children" "Donează"
+                "Href"     "/donate"
+                "Class"    "hidden md:block"
+            }}
+            {{ template "mobile-menu" }}
         </div>
     </div>
 </header>
-{{- end -}}
+{{ end }}
 
 {{- define "mobile-menu" -}}
 <div class="mobile-menu__open md:hidden" aria-label="Open mobile menu">
-    {{- template "icons/menu" (slice "2rem" "2rem") -}}
+    {{ template "icons/menu" (slice "2rem" "2rem") }}
 </div>
 <div class="mobile-menu hidden">
     <div class="mobile-menu__header container flex align-center justify-between gap-4">
         <a href="/" aria-label="Logo">
-            {{- template "icons/logo" (slice "232px" "24px") -}}
+            {{ template "icons/logo" (slice "232px" "24px") }}
         </a>
         <div class="mobile-menu__close" aria-label="Close mobile menu">
-            {{- template "icons/close" (slice "2rem" "2rem") -}}
+            {{ template "icons/close" (slice "2rem" "2rem") }}
         </div>
     </div>
     <nav class="container flex flex-col gap-4">
         <a href="/projects" class="mobile-menu__link">Proiecte</a>
         <a href="/contact" class="mobile-menu__link">Contact</a>
-        {{- template "button" (slice "Donează" "/donate" nil "xl" "" "") -}}
+        {{ template "button" props
+            "Children" "Donează"
+            "Href"     "/donate"
+            "Size"     "xl"
+        }}
     </nav>
 </div>
 {{- end -}}

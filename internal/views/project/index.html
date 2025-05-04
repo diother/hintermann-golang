@@ -1,0 +1,9 @@
+{{- define "project" -}}
+{{- template "head" -}}
+{{- template "header" -}}
+<main class="content__main flex flex-col gap-6">
+      <section>{{ safe .HTMLBody }}</section>
+</main>
+{{- template "footer" -}}
+{{- template "foot" -}}
+{{- end -}} 
