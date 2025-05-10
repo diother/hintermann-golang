@@ -1,22 +1,27 @@
 [
   {
     "slug": "home",
-    "path": "/"
+    "path": "/",
+    "lastMod": "2025-05-10"
   },
   {
-    "slug": "projects",
-    "path": "/projects"
+    "slug": "project-archive",
+    "path": "/projects",
+    "lastMod": "2025-05-10"
   },
   {
     "slug": "contact",
-    "path": "/contact"
+    "path": "/contact",
+    "lastMod": "2025-05-08"
   },
   {
     "slug": "donate",
-    "path": "/donate"
+    "path": "/donate",
+    "lastMod": "2025-05-07"
   },
   {
     "slug": "thank-you",
-    "path": "/donate/thank-you"
+    "path": "/donate/thank-you",
+    "lastMod": "2025-05-07"
   }
 ]

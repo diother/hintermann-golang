@@ -1,0 +1,6 @@
+{{- define "robots" -}}
+User-agent: *
+Allow: /
+
+Sitemap: https://hintermann.ro/sitemap.xml
+{{- end -}}

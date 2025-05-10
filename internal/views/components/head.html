@@ -1,13 +1,56 @@
 {{- define "head" -}}
+{{- $defaults := props
+    "Title"       "Hintermann Charity"
+    "Description" "Oferă un zâmbet. Susținem cauze umanitare în România."
+    "Page"        "/"
+    "Image"       "/static/media/og-image.png"
+    "Type"        "WebPage"
+    "Domain"      "https://hintermann.ro"
+-}}
+{{- $props := merge . $defaults -}}
 <!doctype html>
 <html lang="ro">
-    <head>
-        <title>{{ .Title }}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="/static/css/index.css" rel="stylesheet" />
-        <link rel="preload" href="/static/fonts/Raleway-Black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-        <link rel="preload" href="/static/fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    </head>
-    <body> 
-        <main class="content" data-content="">
+<head>
+    <title>{{ $props.Title }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ $props.Description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ $props.Title }}">
+    <meta property="og:description" content="{{ $props.Description }}">
+    <meta property="og:url" content="{{ $props.Domain }}{{ $props.Page }}">
+    <meta property="og:image" content="{{ $props.Domain }}{{ $props.Image }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $props.Title }}">
+    <meta name="twitter:description" content="{{ $props.Description }}">
+    <meta name="twitter:image" content="{{ $props.Domain }}{{ $props.Image }}">
+    <meta name="robots" content="index, follow">
+    <link href="/static/css/index.css" rel="stylesheet" />
+    <link rel="canonical" href="{{ $props.Domain }}{{ $props.Page }}">
+    <link rel="icon" type="image/x-icon" href="/static/media/favicon.ico">
+    <link rel="preload" href="/static/fonts/Raleway-Black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/static/fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "{{ $props.Type }}",
+        "name": "{{ $props.Title }}",
+        "url": "{{ $props.Domain }}{{ $props.Page }}",
+        "description": "{{ $props.Description }}"
+        {{- if eq $props.Type "Organization" -}}, 
+            "logo": "{{ $props.Domain }}/static/media/favicon.ico",
+            "sameAs": [
+                "https://www.facebook.com/people/Hintermann-Charity/61556605667252",
+                "https://www.instagram.com/hintermann_charity",
+                "https://www.linkedin.com/company/101937853",
+                "https://twitter.com/hintermann_"
+            ]
+        {{- else if eq $props.Type "Article" -}},
+            "datePublished": "{{ $props.Date }}"
+        {{- end }}
+    }
+    </script>
+</head>
+<body> 
+<main class="content" data-content="">
 {{- end -}}

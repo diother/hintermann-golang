@@ -16,6 +16,14 @@ type ProjectMeta struct {
 }
 
 type StaticPage struct {
-	Slug string `json:"slug"`
-	Path string `json:"path"`
+	Slug    string `json:"slug"`
+	Path    string `json:"path"`
+	LastMod string `json:"lastMod"`
+}
+
+type SitemapEntry struct {
+	Loc        string
+	LastMod    string
+	ChangeFreq string
+	Priority   string
 }

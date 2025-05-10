@@ -1,0 +1,57 @@
+.donate__toggle {
+  font-size: var(--font-size-sm);
+  color: hsl(var(--color-secondary));
+  background-color: hsl(var(--color-bg));
+  height: var(--space-8);
+  border: 1px solid hsl(var(--color-secondary));
+  border-radius: var(--radius-full);
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.donate__toggle--first {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.donate__toggle--second {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.donate__toggle--active {
+  background-color: hsl(var(--color-secondary));
+  color: hsl(var(--color-fg-inverse));
+  cursor: auto;
+}
+
+.donate__toggle:not(.donate__toggle--active):hover {
+  background-color: hsl(var(--color-secondary) / 0.1);
+}
+
+.donate__option {
+  font-size: var(--font-size-lg);
+  font-family: var(--font-heading);
+  color: hsl(var(--color-secondary));
+  background-color: hsl(var(--color-bg));
+  padding: var(--space-2) var(--space-8);
+  border: 2px solid hsl(var(--color-secondary));
+  border-radius: var(--radius-full);
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.donate__option:has(input:checked) {
+  background-color: hsl(var(--color-secondary));
+  color: hsl(var(--color-fg-inverse));
+}
+
+.donate__secure {
+  font-size: var(--font-size-sm);
+}

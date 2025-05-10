@@ -22,10 +22,17 @@ func main() {
 	if err := builder.RenderProjects(projectMetaList, tmpl); err != nil {
 		log.Fatal(err)
 	}
-	if err := builder.RenderStaticPages(projectMetaList, tmpl); err != nil {
+	staticPageList, err := builder.LoadStaticPageList()
+	if err != nil {
+		log.Fatal(err)
+	}
+	if err := builder.RenderStaticPages(projectMetaList, staticPageList, tmpl); err != nil {
 		log.Fatal(err)
 	}
 	if err := builder.CopyGlobalAssets(); err != nil {
+		log.Fatal(err)
+	}
+	if err := builder.RenderSeoFiles(projectMetaList, staticPageList); err != nil {
 		log.Fatal(err)
 	}
 }

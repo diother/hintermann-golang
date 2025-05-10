@@ -7,13 +7,10 @@ import (
 	"html/template"
 	"os"
 	"path/filepath"
+	"time"
 )
 
-func RenderStaticPages(projectMetaList []ProjectMeta, tmpl *template.Template) error {
-	pages, err := loadStaticPagesConfig()
-	if err != nil {
-		return fmt.Errorf("trouble reading static page config: %w", err)
-	}
+func RenderStaticPages(projectMetaList []ProjectMeta, pages []StaticPage, tmpl *template.Template) error {
 	for _, page := range pages {
 		var buf bytes.Buffer
 
@@ -33,7 +30,7 @@ func RenderStaticPages(projectMetaList []ProjectMeta, tmpl *template.Template) e
 	return nil
 }
 
-func loadStaticPagesConfig() ([]StaticPage, error) {
+func LoadStaticPageList() ([]StaticPage, error) {
 	data, err := os.ReadFile("internal/views/static_pages.json")
 	if err != nil {
 		return nil, err
@@ -56,6 +53,12 @@ func (pm *StaticPage) validate() error {
 	}
 	if pm.Path == "" {
 		return fmt.Errorf("missing path")
+	}
+	if pm.LastMod == "" {
+		return fmt.Errorf("missing path")
+	}
+	if _, err := time.Parse("2006-01-02", pm.LastMod); err != nil {
+		return fmt.Errorf("invalid date format (expected YYYY-MM-DD): %s", pm.LastMod)
 	}
 	return nil
 }

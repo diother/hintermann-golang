@@ -1,5 +1,10 @@
 {{- define "contact" -}}
-{{- template "head" -}}
+{{- template "head" props
+    "Title"       "Contact"
+    "Description" "Pagina de contact Hintermann Charity"
+    "Page"        "/contact"
+    "Type"        "ContactPage"
+-}}
 {{- template "header" -}}
 <main class="content__main container flex flex-col gap-8">
     <h1>Vorbește cu noi</h1>

@@ -1,5 +1,9 @@
 {{- define "donate" -}}
-{{- template "head" -}}
+{{- template "head" props
+    "Title"       "Portal donații"
+    "Description" "Portal donații Hintermann Charity"
+    "Page"        "/donate"
+-}}
 {{- template "header" -}}
 <main class="content container flex flex-col gap-6">
     <h1>Cum poți ajuta?</h1>
@@ -8,97 +12,57 @@
         cei aflați în nevoie. Scopul nostru este să facem lumea un loc mai
         bun. Alătură-te mișcării noastre.
     </p>
-    <!-- I can basically copy that once again easily 
-    what I need to do instead is to create the minimal stuff. let's create a basic div stuff, because 
-    that's not even going to be a button, or it is going to be a button
-
-I do understand that logic, but to be honest, i don't think there's any real purpose
-in following it right here, because that's only going to complicate everything
-just write both of them and use a display none thing and that's that. 
-probably having 2 separate forms is easier for the API request, because we don't risk anything weird happening
-even though theoretically there should be nothing too complicated happening. I don't even need to process that on the
-server to be truly honest. I can have it all the way in the JavaScript land. 
-that would be simpler for my server architecture. Well, in fact, I don't even have a server.
-so there's not going to be any API request to begin with. 
-but forget that. for now, just the 2 forms and then we think about the JS
-
-to be honest this is really fun
--->
-    <div>
-        <div>
-            <button>O dată</button>
-            <button>Lunar</button>
-        </div>
-        <form>
-            <input>
-            <button type="submit">Donează</button>
-        </form>
-        <form>
-            <input>
-            <button type="submit">Alătură-te acum</button>
-        </form>
+    <div class="grid grid-cols-2">
+        <button class="donate__toggle donate__toggle--first donate__toggle--active" data-donate-toggle="once">O dată</button>
+        <button class="donate__toggle donate__toggle--second" data-donate-toggle="monthly">Lunar</button>
     </div>
-    <p class="form__secure">
+    <form id="form-once" class="flex flex-col gap-2">
+        {{ template "donate-option" (slice "pay-1" "10 lei" nil) }}
+        {{ template "donate-option" (slice "pay-2" "25 lei" "checked") }}
+        {{ template "donate-option" (slice "pay-3" "50 lei" nil) }}
+        {{ template "donate-option" (slice "pay-4" "100 lei" nil) }}
+        {{ template "donate-option" (slice "pay-5" "Altă sumă" nil) }}
+        {{ template "button" props
+            "Children"   "Donează"
+            "Size"       "xl"
+            "Class"      "w-full"
+            "Attributes" (attr "type='submit'")
+        }}
+    </form>
+    <form id="form-monthly" class="flex flex-col gap-2 hidden">
+        {{ template "donate-option" (slice "sub-1" "25 lei" nil) }}
+        {{ template "donate-option" (slice "sub-2" "35 lei" "checked") }}
+        {{ template "donate-option" (slice "sub-3" "50 lei" nil) }}
+        {{ template "donate-option" (slice "sub-4" "75 lei" nil) }}
+        {{ template "donate-option" (slice "sub-5" "100 lei" nil) }}
+        {{ template "button" props
+            "Children"   "Alătură-te acum"
+            "Size"       "xl"
+            "Class"      "w-full"
+            "Attributes" (attr "type='submit'")
+        }}
+    </form>
+    <p class="donate__secure">
         În continuare, vei fi redirecționat(ă) către o pagină de plată
         securizată.
     </p>
-
 </main>
-<!-- const Form = ({ method }: { method: "pay" | "sub" }) => { -->
-<!--     const [, action] = useFormState(checkoutAction, undefined); -->
-<!--     const [value, setValue] = useState(`pay_4`); -->
-<!---->
-<!--     const change = (event: React.ChangeEvent<HTMLInputElement>) => { -->
-<!--         setValue(event.target.value); -->
-<!--     }; -->
-<!---->
-<!--     return ( -->
-<!--         <form action={action} className="flex flex-col gap-2"> -->
-<!--             <input -->
-<!--                 name="mode" -->
-<!--                 className="hidden" -->
-<!--                 value={method === "pay" ? "payment" : "subscription"} -->
-<!--                 readOnly -->
-<!--             /> -->
-<!--             <Option method={method} value={value} change={change} index={1} /> -->
-<!--             <Option method={method} value={value} change={change} index={2} /> -->
-<!--             <Option method={method} value={value} change={change} index={3} /> -->
-<!--             <Option method={method} value={value} change={change} index={4} /> -->
-<!--             <Option method={method} value={value} change={change} index={5} /> -->
-<!--             <Button type="submit" className="mt-4 w-full" size="xl"> -->
-<!--                 {method === "pay" ? "Donează acum" : "Alătură-te acum"} -->
-<!--             </Button> -->
-<!--         </form> -->
-<!--     ); -->
-<!-- }; -->
-<!---->
-<!-- interface OptionProps { -->
-<!--     method: "pay" | "sub"; -->
-<!--     value: string; -->
-<!--     change: (event: React.ChangeEvent<HTMLInputElement>) => void; -->
-<!--     index: 1 | 2 | 3 | 4 | 5; -->
-<!-- } -->
-<!---->
-<!-- const Option = ({ method, value, change, index }: OptionProps) => ( -->
-<!--     <label -->
-<!--         className={cn( -->
-<!--             "flex h-12 items-center justify-center rounded-full border-2 border-secondary font-display text-xl text-secondary", -->
-<!--             value === `${method}_${index}` && "bg-secondary text-white shadow", -->
-<!--         )} -->
-<!--     > -->
-<!--         <input -->
-<!--             type="radio" -->
-<!--             name="option" -->
-<!--             value={`${method}_${index}`} -->
-<!--             checked={value === `${method}_${index}`} -->
-<!--             onChange={change} -->
-<!--             hidden -->
-<!--         /> -->
-<!--         {method === "pay" ? payments[index - 1] : subscriptions[index - 1]} -->
-<!--     </label> -->
-<!-- ) -->
-
 {{- template "footer" -}}
 <script src="/static/js/donate.js"></script>
+
 {{- template "foot" -}}
 {{- end -}} 
+
+{{- define "donate-option" -}}
+{{- $value := index . 0 -}}
+{{- $label := index . 1 -}}
+{{- $checked := index . 2 -}}
+<label class="donate__option flex align-center justify-center">
+    <input class="hidden" type="radio" name="option" value="{{ $value }}"
+        {{- if $checked -}} 
+            checked
+        {{- end -}}
+    >
+    {{ $label }}
+</label>
+{{- end -}}

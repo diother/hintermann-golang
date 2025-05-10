@@ -12,12 +12,14 @@ func LoadTemplates() (tmpl *template.Template, err error) {
 		"props": helpers.PropsHelper,
 		"merge": helpers.MergePropsHelper,
 		"safe":  helpers.SafeHTMLHelper,
+		"attr":  helpers.AttrHelper,
 		"add":   helpers.AddHelper,
 	})
 	tmpl, err = tmpl.ParseGlob("internal/views/*.html")
+	if err != nil {
+		return nil, err
+	}
 	tmpl, err = tmpl.ParseGlob("internal/views/components/*.html")
-	tmpl, err = tmpl.ParseGlob("internal/views/project/*.html")
-
 	if err != nil {
 		return nil, err
 	}

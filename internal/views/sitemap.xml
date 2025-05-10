@@ -1,0 +1,13 @@
+{{- define "sitemap" -}}
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {{- range . }}
+  <url>
+    <loc>{{ .Loc }}</loc>
+    <lastmod>{{ .LastMod }}</lastmod>
+    {{- if .ChangeFreq }}<changefreq>{{ .ChangeFreq }}</changefreq>{{ end }}
+    {{- if .Priority }}<priority>{{ .Priority }}</priority>{{ end }}
+  </url>
+  {{- end -}}
+</urlset>
+{{- end -}}

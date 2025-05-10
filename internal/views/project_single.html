@@ -1,5 +1,12 @@
-{{- define "project" -}}
-{{- template "head" -}}
+{{- define "project-single" -}}
+{{- template "head" props
+    "Title"       .Meta.Title
+    "Description" .Meta.Description
+    "Page"        (printf "/projects/%s" .Meta.Slug)
+    "Image"       (printf "/projects/%s/%s" .Meta.Slug .Meta.CoverImage)
+    "Type"        "Article"
+    "Date"        .Meta.Date
+-}}
 {{- template "header" -}}
 <main class="content__main container container--py-12 flex flex-col gap-6">
     <h1>{{ .Meta.Title }}</h1>

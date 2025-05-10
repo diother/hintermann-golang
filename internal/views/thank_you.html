@@ -1,5 +1,9 @@
 {{- define "thank-you" -}}
-{{- template "head" -}}
+{{- template "head" props
+    "Title"       "Mulțumim"
+    "Description" "Mulțumim pentru donație"
+    "Page"        "/donate/thank-you"
+-}}
 {{- template "header" -}}
 <main class="content__main container flex flex-col justify-center gap-6">
     {{- template "icons/check" (slice "2.75rem" "2.75rem") -}}

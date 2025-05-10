@@ -16,7 +16,7 @@
         {{- $props.Children -}}
     </a>
 {{- else -}}
-    <button type="button" class="button button--variant-{{ $props.Variant }} button--size-{{ $props.Size }} {{ $props.Class -}}"
+    <button class="button button--variant-{{ $props.Variant }} button--size-{{ $props.Size }} {{ $props.Class -}}"
         {{- if $props.Attributes -}} 
             {{- $props.Attributes -}}
         {{- end -}}

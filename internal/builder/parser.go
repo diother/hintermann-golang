@@ -62,7 +62,7 @@ func renderProject(project Project, slug string, tmpl *template.Template) error 
 	}
 	defer f.Close()
 
-	return tmpl.ExecuteTemplate(f, "project", project)
+	return tmpl.ExecuteTemplate(f, "project-single", project)
 }
 
 func parseMarkdown(slug string) (string, error) {
