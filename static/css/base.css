@@ -61,11 +61,11 @@ h1 {
 }
 
 h2 {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-2xl);
 }
 
 h3 {
-  font-size: 1.125rem;
+  font-size: var(--font-size-xl);
 }
 
 p {

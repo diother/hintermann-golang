@@ -1,5 +1,6 @@
 /* Layout */
 .container {
+  width: 100%;
   max-width: var(--size-md);
   margin: 0 auto;
   padding: var(--space-4) var(--space-6);
@@ -9,8 +10,29 @@
   padding: 0;
 }
 
+.container--py-12 {
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
+}
+
 .container--xl {
   max-width: var(--size-xl);
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.h-auto {
+  height: auto;
 }
 
 /* Flex utils */
@@ -67,6 +89,10 @@
 }
 
 @media (min-width: 768px) {
+  .md\:w-fit {
+    width: fit-content;
+  }
+
   .md\:hidden {
     display: none;
   }

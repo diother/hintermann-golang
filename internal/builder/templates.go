@@ -11,7 +11,8 @@ func LoadTemplates() (tmpl *template.Template, err error) {
 		"slice": helpers.SliceHelper,
 		"props": helpers.PropsHelper,
 		"merge": helpers.MergePropsHelper,
-		"safe":  helpers.SafeHTML,
+		"safe":  helpers.SafeHTMLHelper,
+		"add":   helpers.AddHelper,
 	})
 	tmpl, err = tmpl.ParseGlob("internal/views/*.html")
 	tmpl, err = tmpl.ParseGlob("internal/views/components/*.html")

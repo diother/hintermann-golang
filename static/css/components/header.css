@@ -8,7 +8,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-color: hsl(var(--color-bg) / .8);
+  background-color: hsl(var(--color-bg) / 0.8);
   border-bottom: var(--border-default);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);

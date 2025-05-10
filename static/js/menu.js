@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const content = document.querySelector(".content");
-    const mobileMenu = document.querySelector(".mobile-menu");
-    const openBtn = document.querySelector(".mobile-menu__open");
-    const closeBtn = document.querySelector(".mobile-menu__close");
+    const content = document.querySelector("[data-content]");
+    const mobileMenu = document.querySelector("[data-menu]");
+    const openBtn = document.querySelector('[data-menu-toggle="open"]');
+    const closeBtn = document.querySelector('[data-menu-toggle="close"]');
     let scrollTop = 0;
 
     openBtn.addEventListener("click", () => {

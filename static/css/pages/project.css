@@ -1,0 +1,38 @@
+.project__description {
+  color: hsl(var(--color-muted));
+  font-size: var(--font-size-lg);
+}
+
+.project__avatar {
+  width: var(--space-11);
+  height: var(--space-11);
+  background: hsl(var(--color-secondary));
+  color: hsl(var(--color-fg-inverse));
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xl);
+}
+
+.project__support {
+  color: hsl(var(--color-muted));
+  font-size: var(--font-size-sm);
+}
+
+.project__sponsors {
+  border: var(--border-default);
+  border-right: 0;
+  border-left: 0;
+  padding: var(--space-4) 0;
+}
+
+.project__sponsors-img {
+  width: auto;
+  height: auto;
+  max-width: var(--space-20);
+  max-height: var(--space-6);
+}
+
+.project__cover {
+  width: auto;
+  height: auto;
+  aspect-ratio: 4/3;
+}

@@ -36,6 +36,10 @@ func MergePropsHelper(props map[string]any, defaults map[string]any) map[string]
 	return merged
 }
 
-func SafeHTML(s string) template.HTML {
+func SafeHTMLHelper(s string) template.HTML {
 	return template.HTML(s)
+}
+
+func AddHelper(a, b int) int {
+	return a + b
 }

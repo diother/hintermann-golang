@@ -4,8 +4,16 @@
     "path": "/"
   },
   {
+    "slug": "projects",
+    "path": "/projects"
+  },
+  {
     "slug": "contact",
     "path": "/contact"
+  },
+  {
+    "slug": "donate",
+    "path": "/donate"
   },
   {
     "slug": "thank-you",

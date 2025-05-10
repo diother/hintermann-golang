@@ -1,0 +1,23 @@
+.prose__text {
+  margin-top: var(--space-6);
+  color: hsl(var(--color-muted));
+  font-size: var(--font-size-lg);
+}
+
+.prose__text:first-child {
+  margin-top: 0;
+}
+
+.prose__link {
+  font-size: var(--font-size-lg);
+}
+
+.prose__heading {
+  margin-top: var(--space-8);
+}
+
+.prose__img {
+  margin: var(--space-4) 0;
+  width: 100%;
+  height: auto;
+}

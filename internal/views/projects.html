@@ -1,0 +1,23 @@
+{{- define "projects" -}}
+{{- template "head" -}}
+{{- template "header" -}}
+<main class="content container flex flex-col gap-6">
+    <h1>Proiecte</h1>
+    <section class="flex flex-col gap-12">
+    {{ range . }}
+        <a href="{{ .Slug }}" class="flex flex-col gap-4">
+            <img class="w-full h-auto" src="/projects/{{ .Slug }}/{{ .CoverImage }}" width="300" height="200" alt="{{ .Title }}" />
+            <h2>{{ .Title }}</h2>
+            <p>{{ .Description }}</p>
+            {{ template "button" props
+                "Children" "Vezi poveste"
+                "Size"     "lg"
+                "Class"    "w-full md:w-fit"
+            }}
+        </a>
+    {{end}}
+    </section>
+</main>
+{{- template "footer" -}}
+{{- template "foot" -}}
+{{- end -}} 

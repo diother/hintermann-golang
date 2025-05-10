@@ -1,8 +1,48 @@
 {{- define "project" -}}
 {{- template "head" -}}
 {{- template "header" -}}
-<main class="content__main flex flex-col gap-6">
-      <section>{{ safe .HTMLBody }}</section>
+<main class="content__main container container--py-12 flex flex-col gap-6">
+    <h1>{{ .Meta.Title }}</h1>
+    <p class="project__description">{{ .Meta.Description }}</p>
+    <div class="flex align-center gap-4">
+        <div class="project__avatar flex align-center justify-center">HC</div>
+        <div class="flex flex-col">
+            <span>Hintermann Charity</span>
+            <span class="project__support">{{ .Meta.Read }} min read<span> ·</span>
+                <time dateTime="{{ .Meta.Date }}">
+                    {{ .Meta.Date }}
+                </time>
+            </span>
+        </div>
+    </div>
+    <div class="project__sponsors flex align-center gap-6">
+        <p class="project__support">Sponsorizat de:</p>
+        <div class="h-full flex align-center gap-6">
+            {{ range .Meta.Sponsors }}
+                <img
+                    class="project__sponsors-img"
+                    src="/static/media/logos/{{ . }}.png"
+                    width="75"
+                    height="25"
+                    alt="Logo {{ . }}"
+                />
+            {{ end }} 
+        </div>
+    </div>
+    <img
+        class="project__cover"
+        src="/projects/{{ .Meta.Slug }}/{{ .Meta.CoverImage }}"
+        width="700"
+        height="700"
+        alt="cover image"
+    />
+    <section>{{ safe .HTMLBody }}</section>
+    {{ template "button" props
+        "Children" "Vezi poveste"
+        "Href"     "/projects"
+        "Size"     "lg"
+        "Class"    "w-full"
+    }}
 </main>
 {{- template "footer" -}}
 {{- template "foot" -}}

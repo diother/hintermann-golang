@@ -34,7 +34,7 @@ func RenderProjects(projectMetaList []ProjectMeta, tmpl *template.Template) erro
 		if err := renderProject(project, slug, tmpl); err != nil {
 			return fmt.Errorf("rendering project '%s': %w", slug, err)
 		}
-		if err := copyAssets(slug); err != nil {
+		if err := copyProjectAssets(slug); err != nil {
 			return fmt.Errorf("failed to copy assets for '%s': %w", slug, err)
 		}
 	}
@@ -47,7 +47,7 @@ func loadProjectMetaBySlug(projectMetaList []ProjectMeta, slug string) (*Project
 			return &projectMetaList[i], nil
 		}
 	}
-	return nil, fmt.Errorf("no meta found")
+	return nil, fmt.Errorf("no entry in the array found")
 }
 
 func renderProject(project Project, slug string, tmpl *template.Template) error {
@@ -88,53 +88,26 @@ func parseMarkdown(slug string) (string, error) {
 		if headingMatch := headingRegex.FindStringSubmatch(line); headingMatch != nil {
 			level := len(headingMatch[1])
 			content := headingMatch[2]
-			output.WriteString(fmt.Sprintf("<h%d>%s</h%d>\n", level, content, level))
+			output.WriteString(fmt.Sprintf(`<h%d class="prose__heading">%s</h%d>`+"\n", level, content, level))
 			continue
 		}
 		if imageMatch := imageRegex.FindStringSubmatch(line); imageMatch != nil {
 			alt := imageMatch[1]
 			src := imageMatch[2]
-			output.WriteString(fmt.Sprintf(`<img src="%s" alt="%s"/>`+"\n", src, alt))
+			output.WriteString(fmt.Sprintf(`<img class="prose__img" src="%s" alt="%s"/>`+"\n", src, alt))
 			continue
 		}
 		if linkMatch := linkRegex.FindStringSubmatch(line); linkMatch != nil {
 			text := linkMatch[1]
 			href := linkMatch[2]
-			output.WriteString(fmt.Sprintf(`<a href="%s">%s</a>`+"\n", href, text))
+			output.WriteString(fmt.Sprintf(`<a href="%s" class="prose__link">%s</a>`+"\n", href, text))
 			continue
 		}
-		output.WriteString(fmt.Sprintf("<p>%s</p>\n", line))
+		output.WriteString(fmt.Sprintf(`<p class="prose__text">%s</p>`+"\n", line))
 	}
 
 	if err := scanner.Err(); err != nil {
 		return "", err
 	}
 	return output.String(), nil
-}
-
-func copyAssets(slug string) error {
-	distDirPath := filepath.Join(distDir, "projects", slug)
-	srcMediaPath := filepath.Join(projectDir, slug, "media")
-
-	entries, err := os.ReadDir(srcMediaPath)
-	if err != nil {
-		if os.IsNotExist(err) {
-			return nil
-		}
-		return err
-	}
-
-	for _, entry := range entries {
-		srcPath := filepath.Join(srcMediaPath, entry.Name())
-		distPath := filepath.Join(distDirPath, entry.Name())
-
-		input, err := os.ReadFile(srcPath)
-		if err != nil {
-			return err
-		}
-		if err := os.WriteFile(distPath, input, 0644); err != nil {
-			return err
-		}
-	}
-	return nil
 }

@@ -20,7 +20,25 @@
             crea o comunitate activă și fun în jurul acestor inițiative.
         </p>
     </section>
-    <section class="partners container flex flex-col gap-6">
+    <section class="projects container container--py-12 flex flex-col gap-12">
+    {{ $count := 0 }}
+    {{range . }}
+        {{if lt $count 4 }}
+        {{ $count = add $count 1 }}
+        <a href="/projects/{{ .Slug }}" class="flex flex-col gap-4">
+            <img class="w-full h-auto" src="/projects/{{ .Slug }}/{{ .CoverImage }}" width="300" height="200" alt="{{ .Title }}" />
+            <h2>{{ .Title }}</h2>
+            <p>{{ .Description }}</p>
+            {{ template "button" props
+                "Children" "Vezi poveste"
+                "Size"     "lg"
+                "Class"    "w-full md:w-fit"
+            }}
+        </a>
+        {{end}}
+    {{end}}
+    </section>
+    <section class="container flex flex-col gap-6">
         <h1>Parteneri</h1>
         <p>
             Mulțumim partenerilor noștri pentru sprijinul lor în răspândirea
