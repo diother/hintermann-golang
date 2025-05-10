@@ -9,7 +9,17 @@
 }
 
 .prose__link {
+  display: block;
+  margin-top: var(--space-6);
   font-size: var(--font-size-lg);
+  width: fit-content;
+  text-decoration-line: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition-fast);
+}
+
+.prose__link:hover {
+  color: hsl(var(--color-muted));
 }
 
 .prose__heading {

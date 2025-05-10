@@ -2,7 +2,9 @@ Premium Aerotec s-au arătat foarte deschiși să ne ajute cu pachete de mâncar
 
 Am adunat familiile, iar ei, împreună cu muncitorii lor, au pregătit pachetele alimentare.
 
-Pachetele au fost extrem de generoase. Au dorit să se asigure că familiile vor avea un timp frumos de sărbători. În plus, am adăugat alimente de la [Colecta Alimentară de Crăciun](/projects/colecta-alimentara-de-craciun).
+Pachetele au fost extrem de generoase. Au dorit să se asigure că familiile vor avea un timp frumos de sărbători. În plus, am adăugat alimente de la Colecta Alimentară de Crăciun.
+
+[Citește povestea de la Colecta Alimentară de Crăciun](/projects/colecta-alimentara-de-craciun)
 
 Am început proiectul pe 20 decembrie și, până pe 24, am distribuit pachetele. Am fost întâmpinați cu multă recunoștință.
 

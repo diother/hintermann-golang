@@ -14,11 +14,7 @@ Am realizat că nevoia este mult mai mare decât ne-am imaginat inițial.
 
 Odată ce am identificat familiile, am organizat întâlniri cu ele și le-am oferit pachete alimentare care să le asigure nevoile de bază pentru o perioadă de timp.
 
-Exemplu de pachet alimentar:
-- Orez, paste, făină
-- Conserve
-- Ulei, zahăr, sare
-- Produse de curățenie și igiena personală
+Exemplu de pachet alimentar: orez, paste, făină, conserve, ulei, zahăr, sare, produse de curățenie și igiena personală.
 
 Am fost întâmpinați cu mare entuziasm. În mod special, copiii săreau în sus de bucurie. 
 
@@ -37,8 +33,6 @@ De asemenea, mulțumim echipei dedicate de voluntari care s-au ocupat de împach
 Această inițiativă este doar un mic pas spre misiunea noastră de a construi case caritabile, dar marchează începutul unui drum nou și plin de speranță.
 
 Vă invităm să vă alăturați misiunii noastre. Donațiile dumneavoastră pot face o diferență semnificativă.
-
-Vizitați [portalul nostru de donații](/donate) pentru a contribui.
 
 Urmăriți-ne pe platformele de socializare pentru a fi la curent cu eforturile noastre și pentru a vedea impactul susținerii dumneavoastră.
 

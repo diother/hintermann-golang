@@ -1,0 +1,32 @@
+{{- define "sponsor-logo" -}}
+{{ $sponsors := (slice
+(props 
+"Name" "Auchan"
+"Width" "10px")
+(props 
+"Name" "Malfini"
+"Width" "10px")
+
+)}}
+<!-- slug
+href
+width
+height
+special little correction
+
+This is a bit of trickery, but it doesn't particularly matter.
+
+logo slug
+and 
+home or single
+
+by default it's going to be home.
+but in single we are going to render something different
+
+-->
+
+  {{- range $sponsors -}}
+<p>{{ . }}</p>
+  {{- end -}}
+
+{{- end -}}

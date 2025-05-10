@@ -1,4 +1,4 @@
-În preajma sărbătorilor pascale, în colaborare cu **Humana**, am inițiat campania „Fire de compasiune”, un proiect dedicat sprijinirii a opt familii nevoiașe cu articole de îmbrăcăminte din magazinele Humana.
+În preajma sărbătorilor pascale, în colaborare cu Humana, am inițiat campania „Fire de compasiune”, un proiect dedicat sprijinirii a opt familii nevoiașe cu articole de îmbrăcăminte din magazinele Humana.
 
 Prin colaborare cu asistenți sociali din Brașov, am selectat cele opt familii care urmau să beneficieze din această inițiativă, după criterii cum ar fi nivelul veniturilor, numărul de copii și situația generală a fiecărei familii.
 
@@ -18,4 +18,4 @@ Dorim să exprimăm mulțumiri către Humana, pentru contribuția semnificativă
 
 Adresăm o invitație deschisă tuturor celor care vor să se alăture acestei cauze nobile.
 
-Vă încurajăm să [donați](/donate) și să susțineți inițiativele noastre viitoare, contribuind la răspândirea compasiunii în comunitatea noastră. 🌟
+Vă încurajăm să donați orice puteți și să susțineți inițiativele noastre viitoare, contribuind la răspândirea compasiunii în comunitatea noastră.
