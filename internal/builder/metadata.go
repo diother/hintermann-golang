@@ -76,9 +76,9 @@ func (pm *ProjectMeta) validate() error {
 	if pm.CoverImage == "" {
 		return fmt.Errorf("missing cover image")
 	}
-	if ext := filepath.Ext(pm.CoverImage); ext != ".webp" {
-		return fmt.Errorf("unsupported cover image format: %s (use .webp)", ext)
-	}
+	// if ext := filepath.Ext(pm.CoverImage); ext != ".webp" {
+	// 	return fmt.Errorf("unsupported cover image format: %s (use .webp)", ext)
+	// }
 	if pm.Read == "" {
 		return fmt.Errorf("missing read")
 	}

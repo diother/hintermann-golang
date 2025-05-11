@@ -4,8 +4,8 @@ Condițiile în care trăiesc unii dintre ei te lasă fără cuvinte, dar noi su
 
 Mulțumim din suflet lui Alex Star pentru sponsorizarea generoasă care a făcut posibil acest proiect!
 
-![Poza 0](/image0.webp)
-![Poza 1](/image1.webp)
-![Poza 2](/image2.webp)
-![Poza 3](/image3.webp)
-![Poza 4](/image4.webp)
+![Poza 0](/image0.jpg)
+![Poza 1](/image1.jpg)
+![Poza 2](/image2.jpg)
+![Poza 3](/image3.jpg)
+![Poza 4](/image4.jpg)

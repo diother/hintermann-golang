@@ -25,7 +25,7 @@
 }
 
 .project__cover {
-  width: auto;
+  width: 100%;
   height: auto;
-  aspect-ratio: 4/3;
+  aspect-ratio: 3/2;
 }

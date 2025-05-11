@@ -10,13 +10,13 @@ Proiectul nostru a fost susținut de Auchan și Panfood, care ne-au donat pachet
 
 Pachetele au inclus produse alimentare: făină, mălai, zahăr, conserve, borcane, orez, macaroane, supă instant, biscuiți Lica, turtă dulce și produse de curățenie: detergenți, geluri de duș, periuțe de dinți, hârtie igienică.
 
-![Pachet alimentar](/image10.webp)
+![Pachet alimentar](/image10.jpg)
 
 ## Povestiri emoționante și recunoștință
 
 Am întâlnit familii a căror case au fost distruse de flăcări, lăsându-le fără adăpost. 
 
-![Casă în reconstrucție](/image6.webp)
+![Casă în reconstrucție](/image6.jpg)
 
 Prima familie a reușit, cu ajutorul copiilor, să reconstruiască jumătate de casă, dar a doua familie, formată din persoane în vârstă de peste 80 de ani, nu a avut resursele necesare pentru a se reface.
 
@@ -34,7 +34,7 @@ I-am oferit un pachet alimentar, iar reacția ei a fost de profundă emoție și
 
 Această întâlnire ne-a arătat cât de mare este nevoia de ajutor în aceste comunități izolate.
 
-![Tânără mamă](/image1.webp)
+![Tânără mamă](/image1.jpg)
 
 ## Impact și mulțumiri
 

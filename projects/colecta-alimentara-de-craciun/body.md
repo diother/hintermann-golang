@@ -10,13 +10,13 @@ Am început să dăm telefoane, să căutăm alt magazin. Părea puțin probabil
 
 A fost o mare bucurie, dar adevărul e că ne rămăsese doar o săptămână să ne ocupăm de tot restul logisticii. Am organizat materiale, veste, contracte, diplome. Cei de la Malfini ne-au sponsorizat cu bluze. Într-un final, eram gata.
 
-![Poster campanie](/image2.webp)
+![Poster campanie](/image2.jpg)
 
 În timpul evenimentului, am fost impresionați de generozitatea oamenilor. Atmosfera era magică. Mulți voluntari ne-au spus că, pentru prima oară, au realizat cât de mulți oameni chiar nu au ce să mănânce.
 
 Două voluntare au văzut niște copii săraci afară, au intrat în magazin, au cumpărat mâncare și le-au oferit-o. A fost foarte drăguț.
 
-![Cutie colectă](/image3.webp)
+![Cutie colectă](/image3.jpg)
 
 > Am adunat 1300 de kilograme de alimente neperisabile.
 
@@ -24,5 +24,5 @@ Proiectul ne-a învățat multe. Nu doar cum să lucrăm cu voluntarii, dar și 
 
 Mulțumim din inimă tuturor celor care au făcut asta posibil – voluntarilor de la Meșotă, prietenilor de la Plai, Malfini, și tuturor celor care au donat.
 
-![Diplome](/image4.webp)
+![Diplome](/image4.jpg)
 

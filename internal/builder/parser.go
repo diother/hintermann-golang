@@ -94,7 +94,7 @@ func parseMarkdown(slug string) (string, error) {
 		if imageMatch := imageRegex.FindStringSubmatch(line); imageMatch != nil {
 			alt := imageMatch[1]
 			src := imageMatch[2]
-			output.WriteString(fmt.Sprintf(`<img class="prose__img" src="%s" alt="%s"/>`+"\n", src, alt))
+			output.WriteString(fmt.Sprintf(`<img class="prose__img" src="/projects/%s/%s" alt="%s"/>`+"\n", slug, src, alt))
 			continue
 		}
 		if linkMatch := linkRegex.FindStringSubmatch(line); linkMatch != nil {

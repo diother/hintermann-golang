@@ -10,7 +10,7 @@ Am vrut ca toate familiile, indiferent de localizarea lor, să aibă acces la ac
 
 La sosirea în magazin, fiecare familie a reușit să selecteze haine potrivite pentru gusturile și nevoile lor, într-un cadru prietenos și primitor.
 
-![Familie beneficiari](/image5.webp)
+![Familie beneficiari](/image5.jpg)
 
 După finalizarea cumpărăturilor, fiecare familie a fost transportată înapoi acasă, încărcată de cadouri și speranță.
 

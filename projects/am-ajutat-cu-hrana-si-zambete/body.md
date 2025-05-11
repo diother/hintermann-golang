@@ -5,7 +5,7 @@ date: "2025-04-20"
 read: 1
 sponsors: 
     - carmeuse
-featureImage: /image1.jpeg
+featureImage: /image1.jpg
 ---
 
 În perioada de 17 până pe 19 martie, am avut oportunitatea de a crea un proiect minunat, grație sprijinului generos al celor de la Carmeuse Holdings. Cu ajutorul lor, am reușit să oferim pachete de alimente celor mai nevoiași copii din jurul Brașovului.
@@ -16,10 +16,10 @@ Prin aceste pachete, am reușit să aducem zâmbete pe fețele celor mici și s�
 
 Împreună am făcut o diferență!
 
-![Poza 0](/image0.webp)
-![Poza 1](/image1.webp)
-![Poza 2](/image2.webp)
-![Poza 3](/image3.webp)
-![Poza 4](/image4.webp)
-![Poza 5](/image5.webp)
-![Poza 6](/image6.webp)
+![Poza 0](/image0.jpg)
+![Poza 1](/image1.jpg)
+![Poza 2](/image2.jpg)
+![Poza 3](/image3.jpg)
+![Poza 4](/image4.jpg)
+![Poza 5](/image5.jpg)
+![Poza 6](/image6.jpg)
