@@ -24,13 +24,6 @@
   padding: var(--space-4) 0;
 }
 
-.project__sponsors-img {
-  width: auto;
-  height: auto;
-  max-width: var(--space-20);
-  max-height: var(--space-6);
-}
-
 .project__cover {
   width: auto;
   height: auto;

@@ -24,16 +24,13 @@
     </div>
     <div class="project__sponsors flex align-center gap-6">
         <p class="project__support">Sponsorizat de:</p>
-        <div class="h-full flex align-center gap-6">
-            {{ range .Meta.Sponsors }}
-                <img
-                    class="project__sponsors-img"
-                    src="/static/media/logos/{{ . }}.png"
-                    width="75"
-                    height="25"
-                    alt="Logo {{ . }}"
-                />
-            {{ end }} 
+        <div class="flex align-center gap-6">
+            {{- range .Meta.Sponsors -}}
+                {{ template "sponsor-logo" (props 
+                    "Name"  .
+                    "Scale" 0.6
+                )}}
+            {{- end -}}
         </div>
     </div>
     <img

@@ -1,32 +1,100 @@
 {{- define "sponsor-logo" -}}
-{{ $sponsors := (slice
-(props 
-"Name" "Auchan"
-"Width" "10px")
-(props 
-"Name" "Malfini"
-"Width" "10px")
+{{- $defaults := props
+    "Name"  ""
+    "Class" ""
+    "Scale" 1.0
+-}}
+{{- $props := merge . $defaults -}}
 
-)}}
-<!-- slug
-href
-width
-height
-special little correction
+{{- $name := $props.Name -}}
+{{- $class := $props.Class -}}
+{{- $scale := $props.Scale -}}
 
-This is a bit of trickery, but it doesn't particularly matter.
+{{- $sponsors := slice
+    (props 
+        "Name"   "auchan"
+        "Width"  115.0
+        "Height" 27.85
+        "Href"   "https://auchan.ro"
+    )
+    (props 
+        "Name"   "alex-star"
+        "Width"  90.0
+        "Height" 37.97
+        "Href"   "https://alexstar.ro"
+    )
+    (props 
+        "Name"   "ana-maria"
+        "Width"  130.0
+        "Height" 44.01
+        "Href"   "https://farmaciaanamaria.ro"
+    )
+    (props 
+        "Name"      "carmeuse"
+        "Width"     100.0
+        "Height"    50.39
+        "Href"      "https://carmeuse.com/ro-ro"
+        "MarginTop" 10.0
+    )
+    (props 
+        "Name"      "plai"
+        "Width"     60.0
+        "Height"    57.65
+        "Href"      "https://plaicashcarry.ro"
+        "MarginTop" 7.0
+    )
+    (props 
+        "Name"   "aerotec"
+        "Width"  170.0
+        "Height" 24.35
+        "Href"   "https://premium-aerotec.com"
+    )
+    (props 
+        "Name"   "elmas"
+        "Width"  85.0
+        "Height" 59.75
+        "Href"   "https://elmas.ro"
+    )
+    (props 
+        "Name"   "humana"
+        "Width"  110.0
+        "Height" 29.65
+        "Href"   "https://humana-romania.ro"
+    )
+    (props 
+        "Name"      "malfini"
+        "Width"     80.0
+        "Height"    49.0
+        "Href"      "https://malfini.ro"
+        "MarginTop" 3.0
+    )
+    (props 
+        "Name"   "lista-firme"
+        "Width"  135.0
+        "Height" 17.93
+        "Href"   "https://listafirme.ro"
+    )
+    (props 
+        "Name"   "panfood"
+        "Width"  78.0
+        "Height" 64.29
+        "Href"   "https://panfood.ro"
+    )
+-}}
 
-logo slug
-and 
-home or single
-
-by default it's going to be home.
-but in single we are going to render something different
-
--->
-
-  {{- range $sponsors -}}
-<p>{{ . }}</p>
-  {{- end -}}
-
+{{- range $sponsors -}}
+    {{- if eq .Name $name -}}
+        <a class="flex align-center justify-center {{ $class }}" href="{{ .Href }}">
+            <img src="/static/media/logos/{{ .Name }}.png" 
+                width="{{ mulFloat .Width $scale}}" 
+                height="{{ mulFloat .Height $scale}}" 
+                alt="Logo {{ .Name }}" 
+                {{- if .MarginTop -}} 
+                    style="margin-top: -{{ mulFloat .MarginTop $scale }}px;"
+                {{- end -}}
+            />
+        </a>
+        {{ break }}
+    {{- end -}}
+{{- end -}}
 {{- end -}}

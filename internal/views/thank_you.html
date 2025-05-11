@@ -6,25 +6,21 @@
 -}}
 {{- template "header" -}}
 <main class="content__main container flex flex-col justify-center gap-6">
-    {{- template "icons/check" (slice "2.75rem" "2.75rem") -}}
+    {{ template "icon" props 
+        "Name"   "check"
+        "Width"  "2.75rem"
+        "Height" "2.75rem"
+    }}
     <h1>Mulțumim! <span class="italic">Serios.</span></h1>
     <p>Și bine ai venit în familie. Îți mulțumim din suflet pentru donația ta.</p>
     <p>Datorită sprijinului tău, putem continua să ne dedicăm răspândirii bunătății.</p>
     <p>Doar împreună putem avea un impact real.</p>
     <p>Stai la curent cu ultimele noutăți:</p>
     <div class="flex align-center gap-4">
-        <a class="footer__social" aria-label="Facebook" href="https://www.facebook.com/people/Hintermann-Charity/61556605667252/">
-            {{- template "icons/facebook" (slice "1.75rem" "1.75rem") -}}
-        </a>
-        <a class="footer__social" aria-label="Instagram" href="https://www.instagram.com/hintermann_charity/">
-            {{- template "icons/instagram" (slice "1.75rem" "1.75rem") -}}
-        </a>
-        <a class="footer__social" aria-label="LinkedIn" href="https://www.linkedin.com/company/101937853/">
-            {{- template "icons/linkedin" (slice "1.75rem" "1.75rem") -}}
-        </a>
-        <a class="footer__social" aria-label="Twitter" href="https://twitter.com/hintermann_">
-            {{- template "icons/twitter" (slice "1.75rem" "1.75rem") -}}
-        </a>
+        {{- $socials := slice "facebook" "instagram" "linkedin" "twitter" -}}
+        {{- range $socials -}}
+            {{- template "social" . -}}
+        {{- end -}}
     </div>
     {{- template "button" props
         "Children" "Acasă"

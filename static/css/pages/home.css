@@ -22,12 +22,12 @@
   background: hsl(var(--color-secondary) / 0.15);
 }
 
-.partners__link {
+.sponsor__link {
   height: 6rem;
 }
 
 @media (min-width: 768px) {
-  .partners__logo {
+  .sponsor__link {
     transform: scale(1.1);
   }
 }

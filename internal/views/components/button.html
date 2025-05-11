@@ -1,27 +1,36 @@
 {{- define "button" -}}
 {{- $defaults := props
-    "Children" ""
-    "Variant"  "primary"
-    "Size"     "base"
-    "Class"    ""
+    "Children"   ""
+    "Href"       ""
+    "Variant"    "primary"
+    "Size"       "base"
+    "Class"      ""
+    "Attributes" ""
 -}}
 {{- $props := merge . $defaults -}}
 
-{{- if $props.Href -}}
-    <a href="{{- $props.Href -}}" class="button button--variant-{{ $props.Variant }} button--size-{{ $props.Size }} {{ $props.Class -}}"
-        {{- if $props.Attributes -}}
-            {{- $props.Attributes -}}
+{{- $children := $props.Children -}}
+{{- $href := $props.Href -}}
+{{- $variant := $props.Variant -}}
+{{- $size := $props.Size -}}
+{{- $class := $props.Class -}}
+{{- $attributes := $props.Attributes -}}
+
+{{- if $href -}}
+    <a href="{{- $href -}}" class="button button--variant-{{ $variant }} button--size-{{ $size }} {{ $class -}}"
+        {{- if $attributes -}}
+            {{- $attributes -}}
         {{- end -}}
     >
-        {{- $props.Children -}}
+        {{- $children -}}
     </a>
 {{- else -}}
-    <button class="button button--variant-{{ $props.Variant }} button--size-{{ $props.Size }} {{ $props.Class -}}"
-        {{- if $props.Attributes -}} 
-            {{- $props.Attributes -}}
+    <button class="button button--variant-{{ $variant }} button--size-{{ $size }} {{ $class -}}"
+        {{- if $attributes -}} 
+            {{- $attributes -}}
         {{- end -}}
     >
-        {{- $props.Children -}}
+        {{- $children -}}
     </button>
 {{- end -}}
 {{- end -}}

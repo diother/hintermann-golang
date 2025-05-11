@@ -4,18 +4,10 @@
         <a class="footer__link" href="/contact">Contact</a>
         <a class="footer__link" href="/projects">Proiecte</a>
         <nav class="footer__nav flex justify-center gap-6">
-            <a class="footer__social" aria-label="Facebook" href="https://www.facebook.com/people/Hintermann-Charity/61556605667252/">
-                {{- template "icons/facebook" (slice "1.75rem" "1.75rem") -}}
-            </a>
-            <a class="footer__social" aria-label="Instagram" href="https://www.instagram.com/hintermann_charity/">
-                {{- template "icons/instagram" (slice "1.75rem" "1.75rem") -}}
-            </a>
-            <a class="footer__social" aria-label="LinkedIn" href="https://www.linkedin.com/company/101937853/">
-                {{- template "icons/linkedin" (slice "1.75rem" "1.75rem") -}}
-            </a>
-            <a class="footer__social" aria-label="Twitter" href="https://twitter.com/hintermann_">
-                {{- template "icons/twitter" (slice "1.75rem" "1.75rem") -}}
-            </a>
+            {{- $socials := slice "facebook" "instagram" "linkedin" "twitter" -}}
+            {{- range $socials -}}
+                {{- template "social" . -}}
+            {{- end -}}
         </nav>
     </nav>
 </footer>

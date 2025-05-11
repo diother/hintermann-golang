@@ -1,0 +1,33 @@
+{{- define "social" -}}
+{{- $name := . -}}
+{{ $socials := slice
+    (props 
+        "Name" "facebook"
+        "Href" "https://www.facebook.com/people/Hintermann-Charity/61556605667252"
+    )
+    (props 
+        "Name" "instagram"
+        "Href" "https://www.instagram.com/hintermann_charity"
+    )
+    (props 
+        "Name" "linkedin"
+        "Href" "https://www.linkedin.com/company/101937853/"
+    )
+    (props 
+        "Name" "twitter"
+        "Href" "https://twitter.com/hintermann_"
+    )
+}}
+{{- range $socials -}}
+    {{- if eq .Name $name -}}
+        <a class="footer__social" aria-label="{{ .Name }}" href="{{ .Href }}">
+            {{ template "icon" props 
+                "Name"   .Name
+                "Width"  "1.75rem"
+                "Height" "1.75rem"
+            }}
+        </a>
+        {{ break }}
+    {{- end -}}
+{{- end -}}
+{{- end -}}

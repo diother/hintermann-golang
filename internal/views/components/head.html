@@ -6,47 +6,57 @@
     "Image"       "/static/media/og-image.png"
     "Type"        "WebPage"
     "Domain"      "https://hintermann.ro"
+    "Date"        ""
 -}}
 {{- $props := merge . $defaults -}}
-<!doctype html>
+
+{{- $title := $props.Title -}}
+{{- $description := $props.Description -}}
+{{- $page := $props.Page -}}
+{{- $image := $props.Image -}}
+{{- $type := $props.Type -}}
+{{- $domain := $props.Domain -}}
+{{- $date := $props.Date -}}
+
+<!DOCTYPE HTML>
 <html lang="ro">
 <head>
-    <title>{{ $props.Title }}</title>
+    <title>{{ $title }}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ $props.Description }}">
+    <meta name="description" content="{{ $description }}">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ $props.Title }}">
-    <meta property="og:description" content="{{ $props.Description }}">
-    <meta property="og:url" content="{{ $props.Domain }}{{ $props.Page }}">
-    <meta property="og:image" content="{{ $props.Domain }}{{ $props.Image }}">
+    <meta property="og:title" content="{{ $title }}">
+    <meta property="og:description" content="{{ $description }}">
+    <meta property="og:url" content="{{ $domain }}{{ $page }}">
+    <meta property="og:image" content="{{ $domain }}{{ $image }}">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ $props.Title }}">
-    <meta name="twitter:description" content="{{ $props.Description }}">
-    <meta name="twitter:image" content="{{ $props.Domain }}{{ $props.Image }}">
+    <meta name="twitter:title" content="{{ $title }}">
+    <meta name="twitter:description" content="{{ $description }}">
+    <meta name="twitter:image" content="{{ $domain }}{{ $image }}">
     <meta name="robots" content="index, follow">
     <link href="/static/css/index.css" rel="stylesheet" />
-    <link rel="canonical" href="{{ $props.Domain }}{{ $props.Page }}">
+    <link rel="canonical" href="{{ $domain }}{{ $page }}">
     <link rel="icon" type="image/x-icon" href="/static/media/favicon.ico">
     <link rel="preload" href="/static/fonts/Raleway-Black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="/static/fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "{{ $props.Type }}",
-        "name": "{{ $props.Title }}",
-        "url": "{{ $props.Domain }}{{ $props.Page }}",
-        "description": "{{ $props.Description }}"
-        {{- if eq $props.Type "Organization" -}}, 
-            "logo": "{{ $props.Domain }}/static/media/favicon.ico",
+        "@type": "{{ $type }}",
+        "name": "{{ $title }}",
+        "url": "{{ $domain }}{{ $page }}",
+        "description": "{{ $description }}"
+        {{- if eq $type "Organization" -}}, 
+            "logo": "{{ $domain }}/static/media/favicon.ico",
             "sameAs": [
                 "https://www.facebook.com/people/Hintermann-Charity/61556605667252",
                 "https://www.instagram.com/hintermann_charity",
                 "https://www.linkedin.com/company/101937853",
                 "https://twitter.com/hintermann_"
             ]
-        {{- else if eq $props.Type "Article" -}},
-            "datePublished": "{{ $props.Date }}"
+        {{- else if eq $type "Article" -}},
+            "datePublished": "{{ $date }}"
         {{- end }}
     }
     </script>

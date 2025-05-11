@@ -11,7 +11,6 @@
     </section>
     <section class="container flex flex-col gap-6">
         <h1>Cine suntem?</h1>
-            {{ template "sponsor-logo" }}
         <p>
             Suntem o organizație non-profit care vrea să arate că poți face
             bine din bucurie și conexiuni reale, nu doar din milă sau
@@ -48,27 +47,16 @@
             bunătății.
         </p>
         <div class="grid grid-cols-2">
-            <a class="partners__link flex align-center justify-center" href="https://www.auchan.ro/">
-                <img class="partners__logo" src="/static/media/logos/auchan.png" width="115" height="27.85" alt="Logo auchan" />
-            </a>
-            <a class="partners__link flex align-center justify-center" href="https://humana-romania.ro/">
-                <img class="partners__logo" src="/static/media/logos/humana.png" width="110" height="29.65" alt="Logo humana" />
-            </a>
-            <a class="partners__link flex align-center justify-center" href="https://alexstar.ro/">
-                <img class="partners__logo" src="/static/media/logos/alex-star.png" width="90" height="37.97" alt="Logo alex-star" />
-            </a>
-            <a class="partners__link flex align-center justify-center" href="https://www.listafirme.ro/">
-                <img class="partners__logo" src="/static/media/logos/lista-firme.png" width="135" height="17.93" alt="Logo lista-firme" />
-            </a>
-            <a class="partners__link flex align-center justify-center" href="https://www.carmeuse.com/ro-ro">
-                <img class="partners__logo" src="/static/media/logos/carmeuse.png" width="100" height="50.39" alt="Logo carmeuse" />
-            </a>
-            <a class="partners__link flex align-center justify-center" href="https://panfood.ro/">
-                <img class="partners__logo" src="/static/media/logos/panfood.png" width="78" height="64.29" alt="Logo panfood" />
-            </a>
-            <a class="partners__link flex align-center justify-center" href="https://plaicashcarry.ro/">
-                <img class="partners__logo" src="/static/media/logos/plai.png" width="60" height="57.65" alt="Logo plai" />
-            </a>
+            {{- $logos := slice 
+                "auchan" "alex-star" "ana-maria" "carmeuse" "plai" "aerotec" 
+                "elmas" "humana" "malfini" "lista-firme" "panfood" 
+            -}}
+            {{- range $logos -}}
+                {{ template "sponsor-logo" (props 
+                    "Name"  .
+                    "Class" "sponsor__link"
+                )}}
+            {{- end -}}
         </div>
     </section>
 </main>

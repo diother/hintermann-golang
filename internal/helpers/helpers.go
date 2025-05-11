@@ -43,3 +43,11 @@ func SafeHTMLHelper(s string) template.HTML {
 func AddHelper(a, b int) int {
 	return a + b
 }
+
+func MulHelper(a, b int) int {
+	return a * b
+}
+
+func MulFloatHelper(a, b float64) float64 {
+	return a * b
+}
