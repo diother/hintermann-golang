@@ -52,6 +52,10 @@
   color: hsl(var(--color-fg-inverse));
 }
 
+.donate__option:not(:has(input:checked)):hover {
+  background-color: hsl(var(--color-secondary) / 0.1);
+}
+
 .donate__secure {
   font-size: var(--font-size-sm);
 }
