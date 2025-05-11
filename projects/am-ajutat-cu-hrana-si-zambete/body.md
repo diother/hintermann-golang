@@ -1,13 +1,3 @@
----
-title: Am ajutat cu hrană și zâmbete
-description: Cu sprijinul Carmeuse Holdings, am adus hrană și bucurie copiilor din Brașov.
-date: "2025-04-20"
-read: 1
-sponsors: 
-    - carmeuse
-featureImage: /image1.jpg
----
-
 În perioada de 17 până pe 19 martie, am avut oportunitatea de a crea un proiect minunat, grație sprijinului generos al celor de la Carmeuse Holdings. Cu ajutorul lor, am reușit să oferim pachete de alimente celor mai nevoiași copii din jurul Brașovului.
 
 Prin aceste pachete, am reușit să aducem zâmbete pe fețele celor mici și să le oferim momente de bucurie în mijlocul unei perioade dificile. Aceste daruri nu sunt doar simple pachete, ci un simbol al speranței și al solidarității.
