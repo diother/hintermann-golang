@@ -26,7 +26,7 @@
 {{ end }}
 
 {{- define "mobile-menu" -}}
-<div class="md:hidden" data-menu-toggle="open" aria-label="Open mobile menu">
+<div class="md:hidden" data-menu-toggle="open">
     {{ template "icon" props 
         "Name"   "menu"
         "Width"  "2rem"
@@ -42,7 +42,7 @@
                 "Height" "24px"
             }}
         </a>
-        <div aria-label="Close mobile menu" data-menu-toggle="close">
+        <div data-menu-toggle="close">
             {{ template "icon" props 
                 "Name"   "close"
                 "Width"  "2rem"
