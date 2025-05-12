@@ -24,11 +24,20 @@ jobs:
     - name: Generate static files
       run: ./main
 
+    - name: Clean target dir on VPS
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.CD_HOST }}
+        username: ubuntu
+        key: ${{ secrets.CD_SSH_KEY }}
+        script: |
+          rm -rf /var/www/hintermann.ro/*
+
     - name: Copy static files to VPS
       uses: appleboy/scp-action@v0.1.3
       with:
         host: ${{ secrets.CD_HOST }}
         username: ubuntu
         key: ${{ secrets.CD_SSH_KEY }}
-        source: "dist/*"
-        target: "/var/www/hintermann.ro/dist/"
+        source: "dist/**"
+        target: "/var/www/hintermann.ro/"
