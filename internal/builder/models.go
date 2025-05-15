@@ -10,7 +10,6 @@ type ProjectMeta struct {
 	Slug        string   `json:"slug"`
 	Date        string   `json:"date"`
 	Description string   `json:"description"`
-	CoverImage  string   `json:"coverImage"`
 	Read        string   `json:"read"`
 	Sponsors    []string `json:"sponsors"`
 }

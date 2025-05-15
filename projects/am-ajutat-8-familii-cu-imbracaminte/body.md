@@ -10,8 +10,6 @@ Am vrut ca toate familiile, indiferent de localizarea lor, să aibă acces la ac
 
 La sosirea în magazin, fiecare familie a reușit să selecteze haine potrivite pentru gusturile și nevoile lor, într-un cadru prietenos și primitor.
 
-![Familie beneficiari](/image5.jpg)
-
 După finalizarea cumpărăturilor, fiecare familie a fost transportată înapoi acasă, încărcată de cadouri și speranță.
 
 Dorim să exprimăm mulțumiri către Humana, pentru contribuția semnificativă la succesul acestei campanii.
@@ -19,3 +17,11 @@ Dorim să exprimăm mulțumiri către Humana, pentru contribuția semnificativă
 Adresăm o invitație deschisă tuturor celor care vor să se alăture acestei cauze nobile.
 
 Vă încurajăm să donați orice puteți și să susțineți inițiativele noastre viitoare, contribuind la răspândirea compasiunii în comunitatea noastră.
+
+![Poza 2](image2)
+![Poza 3](image3)
+![Poza 4](image4)
+![Poza 5](image5)
+![Poza 6](image6)
+![Poza 1](cover)
+![Poza 7](image7)

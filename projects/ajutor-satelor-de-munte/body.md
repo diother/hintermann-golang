@@ -10,13 +10,13 @@ Proiectul nostru a fost susținut de Auchan și Panfood, care ne-au donat pachet
 
 Pachetele au inclus produse alimentare: făină, mălai, zahăr, conserve, borcane, orez, macaroane, supă instant, biscuiți Lica, turtă dulce și produse de curățenie: detergenți, geluri de duș, periuțe de dinți, hârtie igienică.
 
-![Pachet alimentar](/image10.jpg)
+![Pachet alimentar](image10)
 
 ## Povestiri emoționante și recunoștință
 
 Am întâlnit familii a căror case au fost distruse de flăcări, lăsându-le fără adăpost. 
 
-![Casă în reconstrucție](/image6.jpg)
+![Casă în reconstrucție](image6)
 
 Prima familie a reușit, cu ajutorul copiilor, să reconstruiască jumătate de casă, dar a doua familie, formată din persoane în vârstă de peste 80 de ani, nu a avut resursele necesare pentru a se reface.
 
@@ -34,7 +34,7 @@ I-am oferit un pachet alimentar, iar reacția ei a fost de profundă emoție și
 
 Această întâlnire ne-a arătat cât de mare este nevoia de ajutor în aceste comunități izolate.
 
-![Tânără mamă](/image1.jpg)
+![Tânără mamă](cover)
 
 ## Impact și mulțumiri
 
@@ -43,3 +43,9 @@ Prezența noastră a adus zâmbete și speranță în viețile celor din satele 
 Mulțumim din suflet sponsorilor noștri, Auchan și Panfood, pentru sprijinul lor generos, care a făcut posibil acest proiect.
 
 Vă îndemnăm să donați orice puteți si să urmăriți activitatea noastră, care va aduce un nou început familiilor aflate în nevoie.
+
+![Image 2](image2)
+![Image 3](image3)
+![Image 4](image4)
+![Image 5](image5)
+![Image 7](image7)

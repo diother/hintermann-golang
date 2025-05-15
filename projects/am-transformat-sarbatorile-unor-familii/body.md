@@ -12,10 +12,10 @@ Copii fericiți, părinți mulțumiți, vecini încântați. O atmosferă de Cr�
 
 Mulțumim Aerotec pentru acest cadou frumos.
 
-![Poza 2](/image2.jpg)
-![Poza 3](/image3.jpg)
-![Poza 4](/image4.jpg)
-![Poza 5](/image5.jpg)
-![Poza 6](/image6.jpg)
-![Poza 7](/image7.jpg)
-![Poza 8](/image8.jpg)
+![Poza 2](image2)
+![Poza 3](image3)
+![Poza 4](image4)
+![Poza 5](image5)
+![Poza 6](image6)
+![Poza 7](image7)
+![Poza 8](image8)

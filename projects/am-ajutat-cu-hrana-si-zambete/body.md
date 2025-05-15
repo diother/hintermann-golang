@@ -6,10 +6,9 @@ Prin aceste pachete, am reușit să aducem zâmbete pe fețele celor mici și s�
 
 Împreună am făcut o diferență!
 
-![Poza 0](/image0.jpg)
-![Poza 1](/image1.jpg)
-![Poza 2](/image2.jpg)
-![Poza 3](/image3.jpg)
-![Poza 4](/image4.jpg)
-![Poza 5](/image5.jpg)
-![Poza 6](/image6.jpg)
+![Poza 1](image1)
+![Poza 2](image2)
+![Poza 3](image3)
+![Poza 4](image4)
+![Poza 5](image5)
+![Poza 6](image6)

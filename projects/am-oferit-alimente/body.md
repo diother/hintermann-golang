@@ -8,7 +8,7 @@ Pe parcursul a două zile, am reușit să ajutăm 15 familii din împrejurimile 
 
 Echipa noastră a fost profund mișcată de condițiile de trai ale unora dintre aceste familii.
 
-![Familie Budila](/image2.jpg)
+![Familie 2](image2)
 
 Am realizat că nevoia este mult mai mare decât ne-am imaginat inițial.
 
@@ -20,7 +20,7 @@ Am fost întâmpinați cu mare entuziasm. În mod special, copiii săreau în su
 
 Această energie ne-a reconfirmat faptul că impactul caritabil creează speranță pentru un viitor mai bun, care este la fel de esențială ca mesele asigurate.
 
-![Familie Budila](/image5.jpg)
+![Familie 5](image5)
 
 # Mulțumiri
 
@@ -37,3 +37,10 @@ Vă invităm să vă alăturați misiunii noastre. Donațiile dumneavoastră pot
 Urmăriți-ne pe platformele de socializare pentru a fi la curent cu eforturile noastre și pentru a vedea impactul susținerii dumneavoastră.
 
 Împreună, putem realiza lucruri remarcabile.
+
+![Familie 3](image3)
+![Familie 4](image4)
+![Familie 6](image6)
+![Familie 7](image7)
+![Familie 8](image8)
+![Familie 1](cover)

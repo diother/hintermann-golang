@@ -10,7 +10,7 @@
     <section class="flex flex-col gap-12">
     {{ range . }}
         <a href="{{ .Slug }}" class="flex flex-col gap-4">
-            <img class="w-full h-auto" src="/projects/{{ .Slug }}/{{ .CoverImage }}" width="300" height="200" alt="{{ .Title }}" />
+            <img class="w-full h-auto" src="/projects/{{ .Slug }}/cover-960.webp" width="960" height="540" alt="{{ .Title }}" />
             <h2>{{ .Title }}</h2>
             <p>{{ .Description }}</p>
             {{ template "button" props
