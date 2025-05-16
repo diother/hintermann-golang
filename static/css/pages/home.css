@@ -1,6 +1,7 @@
 .hero {
   position: relative;
   aspect-ratio: 1/1;
+  background-color: hsl(var(--color-secondary));
 }
 
 @media (min-width: 768px) {

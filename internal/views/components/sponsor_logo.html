@@ -85,7 +85,7 @@
 {{- range $sponsors -}}
     {{- if eq .Name $name -}}
         <a class="flex align-center justify-center {{ $class }}" href="{{ .Href }}">
-            <img src="/static/media/logos/{{ .Name }}.png" 
+            <img src="/static/media/logos/{{ .Name }}.webp" 
                 width="{{ mulFloat .Width $scale}}" 
                 height="{{ mulFloat .Height $scale}}" 
                 alt="Logo {{ .Name }}" 
