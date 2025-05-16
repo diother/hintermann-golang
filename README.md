@@ -7,14 +7,13 @@
       body.md
       meta.json
       /media
-        image1.png
-        image2.jpg
+        image1.webp
+        image2.webp
 
 /dist
-  index.html
   /projects
     /cool-project
       index.html
-      image1.png
-      image2.jpg
+      image1.webp
+      image2.webp
 ```
