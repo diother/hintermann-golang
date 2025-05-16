@@ -13,6 +13,7 @@
         {{- $src := printf "/projects/%s/cover" .Slug }}
         <a href="{{ $link }}" class="flex flex-col gap-4">
             <img
+                class="projects__img"
                 src="{{ $src }}-960.webp"
                 srcset="{{ $src }}-960.webp 960w, {{ $src }}-1280.webp 1280w"
                 sizes="(max-width: 1024px) 100vw, 1280px"
