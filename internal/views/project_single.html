@@ -17,7 +17,7 @@
             <span>Hintermann Charity</span>
             <span class="project__support">{{ .Meta.Read }} min read<span> ·</span>
                 <time dateTime="{{ .Meta.Date }}">
-                    {{ .Meta.Date }}
+                    {{ formatDate .Meta.Date }}
                 </time>
             </span>
         </div>
@@ -33,13 +33,14 @@
             {{- end -}}
         </div>
     </div>
+    {{- $src := printf "/projects/%s/cover" .Meta.Slug }}
     <img
         class="project__cover"
-        src="/projects/{{ .Meta.Slug }}/cover-1280.webp"
-        width="700"
-        height="700"
-        alt="cover image"
-    />
+        src="{{ $src }}-960.webp"
+        srcset="{{ $src }}-960.webp 960w, {{ $src }}-1280.webp 1280w"
+        sizes="(max-width: 1024px) 100vw, 1280px"
+        alt="Cover image"
+    >
     <section>{{ safe .HTMLBody }}</section>
     {{ template "button" props
         "Children" "Alte proiecte"

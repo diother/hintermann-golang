@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"html/template"
 	"maps"
+	"time"
 )
 
 func SliceHelper(args ...any) []any {
@@ -50,4 +51,12 @@ func MulHelper(a, b int) int {
 
 func MulFloatHelper(a, b float64) float64 {
 	return a * b
+}
+
+func FormatDateHelper(dateStr string) string {
+	t, err := time.Parse("2006-01-02", dateStr)
+	if err != nil {
+		return dateStr
+	}
+	return t.Format("2 Jan 2006")
 }

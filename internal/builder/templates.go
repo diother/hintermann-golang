@@ -8,14 +8,15 @@ import (
 
 func LoadTemplates() (tmpl *template.Template, err error) {
 	tmpl = template.New("base").Funcs(template.FuncMap{
-		"slice":    helpers.SliceHelper,
-		"props":    helpers.PropsHelper,
-		"merge":    helpers.MergePropsHelper,
-		"safe":     helpers.SafeHTMLHelper,
-		"attr":     helpers.AttrHelper,
-		"add":      helpers.AddHelper,
-		"mul":      helpers.MulHelper,
-		"mulFloat": helpers.MulFloatHelper,
+		"slice":      helpers.SliceHelper,
+		"props":      helpers.PropsHelper,
+		"merge":      helpers.MergePropsHelper,
+		"safe":       helpers.SafeHTMLHelper,
+		"attr":       helpers.AttrHelper,
+		"add":        helpers.AddHelper,
+		"mul":        helpers.MulHelper,
+		"mulFloat":   helpers.MulFloatHelper,
+		"formatDate": helpers.FormatDateHelper,
 	})
 	tmpl, err = tmpl.ParseGlob("internal/views/*.html")
 	if err != nil {

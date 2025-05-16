@@ -26,9 +26,16 @@
     {{- $count := 0 -}}
     {{- range . -}}
         {{- if lt $count 5 -}}
-        {{- $count = add $count 1 }}
-        <a href="/projects/{{ .Slug }}" class="flex flex-col gap-4">
-            <img class="w-full h-auto" src="/projects/{{ .Slug }}/cover-960.webp" width="960" height="540" alt="{{ .Title }}" />
+        {{- $count = add $count 1 -}}
+        {{- $link := printf "/projects/%s" .Slug -}}
+        {{- $src := printf "/projects/%s/cover" .Slug }}
+        <a href="{{ $link }}" class="flex flex-col gap-4">
+            <img
+                src="{{ $src }}-960.webp"
+                srcset="{{ $src }}-960.webp 960w, {{ $src }}-1280.webp 1280w"
+                sizes="(max-width: 1024px) 100vw, 1280px"
+                alt="{{ .Title }}"
+            >
             <h2>{{ .Title }}</h2>
             <p>{{ .Description }}</p>
             {{ template "button" props
