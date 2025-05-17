@@ -3,7 +3,7 @@
 ```
 /src
   /projects
-    /cool-project
+    /2024_03_cool
       body.md
       meta.json
       /media

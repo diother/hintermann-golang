@@ -19,7 +19,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	if err := builder.RenderProjects(projectMetaList, tmpl); err != nil {
+	if err := builder.RenderProjects(tmpl); err != nil {
 		log.Fatal(err)
 	}
 	staticPageList, err := builder.LoadStaticPageList()

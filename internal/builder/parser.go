@@ -10,7 +10,7 @@ import (
 	"strings"
 )
 
-func RenderProjects(projectMetaList []ProjectMeta, tmpl *template.Template) error {
+func RenderProjects(tmpl *template.Template) error {
 	entries, err := os.ReadDir(projectDir)
 	if err != nil {
 		return fmt.Errorf("reading project directory: %w", err)
