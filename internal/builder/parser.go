@@ -20,34 +20,26 @@ func RenderProjects(projectMetaList []ProjectMeta, tmpl *template.Template) erro
 		if !entry.IsDir() {
 			continue
 		}
-		slug := entry.Name()
+		srcSlug := entry.Name()
 		var project Project
 
-		project.Meta, err = loadProjectMetaBySlug(projectMetaList, slug)
+		project.Meta, err = loadMetadata(srcSlug)
 		if err != nil {
-			return fmt.Errorf("loading metadata for project %s: %w", slug, err)
+			return fmt.Errorf("project %s metadata parsing failure: %w", srcSlug, err)
 		}
-		project.HTMLBody, err = parseMarkdown(slug)
+		slug := project.Meta.Slug
+		project.HTMLBody, err = parseMarkdown(srcSlug, slug)
 		if err != nil {
-			return fmt.Errorf("parsing project %s: %w", slug, err)
+			return fmt.Errorf("parsing project %s: %w", srcSlug, err)
 		}
 		if err := renderProject(project, slug, tmpl); err != nil {
-			return fmt.Errorf("rendering project '%s': %w", slug, err)
+			return fmt.Errorf("rendering project '%s': %w", srcSlug, err)
 		}
-		if err := copyProjectAssets(slug); err != nil {
-			return fmt.Errorf("failed to copy assets for '%s': %w", slug, err)
+		if err := copyProjectAssets(srcSlug, slug); err != nil {
+			return fmt.Errorf("failed to copy assets for '%s': %w", srcSlug, err)
 		}
 	}
 	return nil
-}
-
-func loadProjectMetaBySlug(projectMetaList []ProjectMeta, slug string) (*ProjectMeta, error) {
-	for i := range projectMetaList {
-		if projectMetaList[i].Slug == slug {
-			return &projectMetaList[i], nil
-		}
-	}
-	return nil, fmt.Errorf("no entry in the array found")
 }
 
 func renderProject(project Project, slug string, tmpl *template.Template) error {
@@ -65,8 +57,8 @@ func renderProject(project Project, slug string, tmpl *template.Template) error 
 	return tmpl.ExecuteTemplate(f, "project-single", project)
 }
 
-func parseMarkdown(slug string) (string, error) {
-	path := filepath.Join(projectDir, slug, "body.md")
+func parseMarkdown(srcSlug, slug string) (string, error) {
+	path := filepath.Join(projectDir, srcSlug, "body.md")
 	file, err := os.Open(path)
 	if err != nil {
 		return "", err

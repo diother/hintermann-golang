@@ -25,10 +25,10 @@ func LoadProjectMetaList() (projectMetaList []ProjectMeta, err error) {
 		if !entry.IsDir() {
 			continue
 		}
-		slug := entry.Name()
-		metadata, err := loadMetadata(slug)
+		srcSlug := entry.Name()
+		metadata, err := loadMetadata(srcSlug)
 		if err != nil {
-			return nil, fmt.Errorf("project %s metadata parsing failure: %w", slug, err)
+			return nil, fmt.Errorf("project %s metadata parsing failure: %w", srcSlug, err)
 		}
 		projectMetaList = append(projectMetaList, *metadata)
 	}
@@ -38,9 +38,9 @@ func LoadProjectMetaList() (projectMetaList []ProjectMeta, err error) {
 	return projectMetaList, nil
 }
 
-func loadMetadata(slug string) (*ProjectMeta, error) {
+func loadMetadata(srcSlug string) (*ProjectMeta, error) {
 	var meta ProjectMeta
-	path := filepath.Join(projectDir, slug, "meta.json")
+	path := filepath.Join(projectDir, srcSlug, "meta.json")
 	file, err := os.ReadFile(path)
 	if err != nil {
 		return nil, err

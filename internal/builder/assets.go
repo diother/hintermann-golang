@@ -34,9 +34,9 @@ func CopyGlobalAssets() error {
 	})
 }
 
-func copyProjectAssets(slug string) error {
+func copyProjectAssets(srcSlug, slug string) error {
 	distDirPath := filepath.Join(distDir, "projects", slug)
-	srcMediaPath := filepath.Join(projectDir, slug, "media")
+	srcMediaPath := filepath.Join(projectDir, srcSlug, "media")
 
 	entries, err := os.ReadDir(srcMediaPath)
 	if err != nil {
