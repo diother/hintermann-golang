@@ -3,10 +3,11 @@
   width: 100%;
   max-width: var(--size-md);
   margin: 0 auto;
+  padding: var(--space-4) var(--space-6);
 }
 
-.container:not(.container--p-0) {
-  padding: var(--space-4) var(--space-6);
+.container--p-0 {
+  padding: var(--space-0);
 }
 
 .container--py-12 {
