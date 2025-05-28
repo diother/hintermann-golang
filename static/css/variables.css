@@ -67,4 +67,11 @@
   --transition-fast: 150ms var(--ease-default);
   --transition-base: 250ms var(--ease-default);
   --transition-slow: 400ms var(--ease-default);
+
+  /* Padding */
+  --padding-sides: var(--space-6);
+
+  @media (max-width: 340px) {
+    --padding-sides: var(--space-4);
+  }
 }

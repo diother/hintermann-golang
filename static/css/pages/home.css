@@ -32,8 +32,22 @@
   height: 96px;
 }
 
+.sponsor__logo {
+  height: auto;
+}
+
 @media (min-width: 768px) {
-  .sponsor__link {
+  .sponsor__logo {
     transform: scale(1.1);
+  }
+}
+
+@media(max-width: 340px) {
+  .sponsor__link {
+    height: 80px;
+  }
+
+  .sponsor__logo {
+    transform: scale(0.9);
   }
 }
