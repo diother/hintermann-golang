@@ -19,6 +19,15 @@
   object-fit: cover;
 }
 
+.about__body {
+  font-size: var(--font-size-lg);
+}
+
+.about__highlight {
+  font-family: var(--font-heading);
+  color: hsl(var(--color-primary));
+}
+
 .projects {
   background: hsl(var(--color-secondary) / 0.15);
 }
