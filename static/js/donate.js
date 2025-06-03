@@ -4,8 +4,6 @@ const monthlyButton = document.querySelector('[data-donate-toggle="monthly"]');
 const formOnce = document.getElementById('form-once');
 const formMonthly = document.getElementById('form-monthly');
 
-console.log(onceButton)
-
 toggleButtons.forEach(button => {
     button.addEventListener('click', () => {
         const target = button.dataset.donateToggle;

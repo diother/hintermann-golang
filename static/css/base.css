@@ -68,6 +68,10 @@ h3 {
   font-size: var(--font-size-xl);
 }
 
+p {
+  font-size: var(--font-size-base);
+}
+
 a {
   text-decoration: none;
   color: hsl(var(--color-fg));
