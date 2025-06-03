@@ -25,16 +25,16 @@ toggleButtons.forEach(button => {
 });
 
 const links = {
-    "pay-1": "/donate/thank-you",
-    "pay-2": "/donate/thank-you",
-    "pay-3": "/donate/thank-you",
-    "pay-4": "/donate/thank-you",
-    "pay-5": "/donate/thank-you",
-    "sub-1": "/donate/thank-you",
-    "sub-2": "/donate/thank-you",
-    "sub-3": "/donate/thank-you",
-    "sub-4": "/donate/thank-you",
-    "sub-5": "/donate/thank-you"
+    "pay-1": "https://buy.stripe.com/bJeeVdbSW34Bbfn8Lt93y01",
+    "pay-2": "https://buy.stripe.com/5kQ5kD1ei7kRerz2n593y02",
+    "pay-3": "https://buy.stripe.com/cNibJ16yCeNjbfn6Dl93y03",
+    "pay-4": "https://buy.stripe.com/eVq3cv0ae48F1ENf9R93y04",
+    "pay-5": "https://buy.stripe.com/6oU7sL2im34BgzH6Dl93y05",
+    "sub-1": "https://buy.stripe.com/3cI28r6yCdJfdnv7Hp93y06",
+    "sub-2": "https://buy.stripe.com/00wdR99KOfRn5V36Dl93y07",
+    "sub-3": "https://buy.stripe.com/aFaeVd4queNj6Z78Lt93y08",
+    "sub-4": "https://buy.stripe.com/bJe28r0ae20x4QZ2n593y0a",
+    "sub-5": "https://buy.stripe.com/14AcN5g9cdJf4QZ6Dl93y09"
 };
 
 const handleFormSubmit = (form) => {
