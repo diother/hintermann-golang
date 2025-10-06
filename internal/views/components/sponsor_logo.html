@@ -115,6 +115,8 @@
         "Width"  120.0
         "Height" 40.4
         "Href"   "https://danone.ro"
+        "MarginTop" 10.0
+        "MarginPositive" true
     )
 -}}
 
@@ -127,7 +129,11 @@
                 height="{{ mulFloat .Height $scale}}" 
                 alt="Logo {{ .Name }}" 
                 {{- if .MarginTop -}} 
-                    style="margin-top: -{{ mulFloat .MarginTop $scale }}px;"
+                    {{- if .MarginPositive -}} 
+                        style="margin-top: {{ mulFloat .MarginTop $scale }}px;"
+                    {{- else -}}
+                        style="margin-top: -{{ mulFloat .MarginTop $scale }}px;"
+                    {{- end -}}
                 {{- end -}}
             />
         </a>
